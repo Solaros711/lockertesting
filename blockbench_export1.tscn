@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmdyb4u37n4bd"]
+
+[ext_resource type="PackedScene" uid="uid://vwjrybo2u8xn" path="res://imports/rv/rv test3.gltf" id="1_ma3a6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ma3a6"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[node name="blockbench_export" instance=ExtResource("1_ma3a6")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Node/root/outer/exterior/steps/cuboid" index="0"]
+transform = Transform3D(0.864503, 0.502628, 0, -0.502628, 0.864503, 0, 0, 0, 1, 0.215773, 0.138777, -0.373887)
+use_collision = true
+size = Vector3(0.907715, 0.001, 1.11371)
+material = SubResource("StandardMaterial3D_ma3a6")

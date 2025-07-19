@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c17fm0aekfsvg"]
+[gd_scene load_steps=27 format=3 uid="uid://c17fm0aekfsvg"]
 
 [ext_resource type="Script" uid="uid://c1b455a5ckggl" path="res://scripts/player.gd" id="1_71j4m"]
 [ext_resource type="Script" uid="uid://b5r8dgivwddrd" path="res://scenes/player_rayCast.gd" id="2_e3hyu"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bj8mgm514a5vj" path="res://imports/character test/charactertest.gltf" id="10_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://csylkj73mu55m" path="res://imports/rv/rv test6.tscn" id="11_q5onr"]
 [ext_resource type="PackedScene" uid="uid://bctypghj2kq7i" path="res://imports/character test/characterrobot.gltf" id="12_jhx03"]
+[ext_resource type="PackedScene" uid="uid://bjb2hvxtyaxwc" path="res://imports/cabinet/cabinet.tscn" id="12_q5onr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3sb7"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -164,3 +165,6 @@ transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 6.68379, -0.499, 4.5746
 
 [node name="rv" parent="." instance=ExtResource("11_q5onr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.168623, -0.499, 21.8103)
+
+[node name="cabinet" parent="." instance=ExtResource("12_q5onr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7436, -0.237281, 24.1496)

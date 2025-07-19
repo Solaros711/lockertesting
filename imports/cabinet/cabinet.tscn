@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bjb2hvxtyaxwc"]
+[gd_scene load_steps=27 format=4 uid="uid://bjb2hvxtyaxwc"]
 
 [ext_resource type="Script" uid="uid://dlkkeehxi1b71" path="res://imports/cabinet/cabtopdoor.gd" id="1_r6fr0"]
 [ext_resource type="Script" uid="uid://b0g5oxln215wr" path="res://imports/cabinet/cabbotdoor.gd" id="2_7ky3r"]
@@ -204,7 +204,44 @@ _data = {
 &"top_door_open": SubResource("Animation_vl3fx")
 }
 
-[node name="blockbench_export" type="Node3D"]
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_r6fr0"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7ky3r"]
+animation = &"bot_door_close"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7uhln"]
+animation = &"bot_door_open"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_2qcp7"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_7ky3r")
+blend_point_0/pos = -0.1
+blend_point_1/node = SubResource("AnimationNodeAnimation_7uhln")
+blend_point_1/pos = 0.1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_karlf"]
+animation = &"top_door_close"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rimls"]
+animation = &"top_door_open"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_6whmc"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_karlf")
+blend_point_0/pos = -0.1
+blend_point_1/node = SubResource("AnimationNodeAnimation_rimls")
+blend_point_1/pos = 0.1
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_tf74n"]
+graph_offset = Vector2(-54.1818, 45.4545)
+nodes/Add2/node = SubResource("AnimationNodeAdd2_r6fr0")
+nodes/Add2/position = Vector2(780, 120)
+nodes/BotDoor/node = SubResource("AnimationNodeBlendSpace1D_2qcp7")
+nodes/BotDoor/position = Vector2(520, 260)
+nodes/TopDoor/node = SubResource("AnimationNodeBlendSpace1D_6whmc")
+nodes/TopDoor/position = Vector2(520, 80)
+nodes/output/position = Vector2(980, 120)
+node_connections = [&"Add2", 0, &"TopDoor", &"Add2", 1, &"BotDoor", &"output", 0, &"Add2"]
+
+[node name="cabinet" type="Node3D"]
 
 [node name="Node" type="Node3D" parent="."]
 
@@ -222,31 +259,33 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_kylyc")
 
 [node name="top_door" type="Node3D" parent="Node/cabinet"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.761719, 1.82422, 0.964844)
+transform = Transform3D(0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, 0.761719, 1.82422, 0.964844)
 
 [node name="cuboid2" type="MeshInstance3D" parent="Node/cabinet/top_door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0117188, -0.195313, 0.0234375)
 mesh = SubResource("ArrayMesh_ehji7")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node/cabinet/top_door/cuboid2" node_paths=PackedStringArray("animation_player")]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/cabinet/top_door/cuboid2" node_paths=PackedStringArray("animation_player", "animation_tree")]
 script = ExtResource("1_r6fr0")
 animation_player = NodePath("../../../../../AnimationPlayer")
+animation_tree = NodePath("../../../../../AnimationTree")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node/cabinet/top_door/cuboid2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_0fecn")
 
 [node name="bottom_door" type="Node3D" parent="Node/cabinet"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.753906, 0.9375, 0.960938)
+transform = Transform3D(0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, 0.753906, 0.9375, 0.960938)
 
 [node name="cuboid3" type="MeshInstance3D" parent="Node/cabinet/bottom_door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.433594, -0.242188, 0.0234375)
 mesh = SubResource("ArrayMesh_234ic")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node/cabinet/bottom_door/cuboid3" node_paths=PackedStringArray("animation_player")]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/cabinet/bottom_door/cuboid3" node_paths=PackedStringArray("animation_player", "animation_tree")]
 script = ExtResource("2_7ky3r")
 animation_player = NodePath("../../../../../AnimationPlayer")
+animation_tree = NodePath("../../../../../AnimationTree")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node/cabinet/bottom_door/cuboid3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_jekxi")
@@ -255,3 +294,10 @@ shape = SubResource("ConcavePolygonShape3D_jekxi")
 libraries = {
 &"": SubResource("AnimationLibrary_1m2qj")
 }
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_tf74n")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Add2/add_amount = 1.0
+parameters/BotDoor/blend_position = 0.1
+parameters/TopDoor/blend_position = 0.1

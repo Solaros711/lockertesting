@@ -1,0 +1,65 @@
+Blockbench Design Worflow Process for Godot:
+	1. come up with model idea
+	2. determine scope/scaling/size
+	3. determine what needs animating
+	4. Design model in Blockbench
+		a1. Create new Generic Model Project.
+		a2. Name file after object being created.
+		!a1. When creating a new mesh, if you want the mesh to have collision, 
+			 be sure to add the suffix '-col' and Godot will import the object with a collision mesh. (example: cuboid-col)
+		!a2. Don't use cubes, they aren't scalable and can't be edited the same way a normal mesh can. 
+			 These are used primarily for Minecraft mod/Bedrock development
+		!a3. It's best to organize objects into groups, so they can be easily separated, but also to handle animation. 
+			 Folders act as the models 'bones' so when you want to animate, they will be only referencing the folder which 
+			 contains the objects you want to move around.
+		!a4. When getting ready to animate, be sure to verify the pivot point of the object to where you anticipate it to be moving. 
+			 (i.e. If you want a door to open, you'd set the pivot point to where the hinges of the door would be.) You can do this by 
+			 selecting pivot point WHILE having the group selected in the outliner, the using the move arrows to place it.
+	5. Handle Animation, Texturing, Export & Import (Animating and texturing can technically be done in either order, but just be 
+	   sure to do both before exporting, otherwise you're going to have a bad time.)
+		-> Check Step 6 before doing any of these, that section will give you exact instructions on how to handle different types of objects.
+		
+		TEXTERING:
+			a1. Add texture to model:
+				 1. Create texture by clicking 'create texture' button or CTRL+SHIFT+T
+				 2. Set name of texture to the name of the object, be specific.
+				 3. Set Pixel Density to 64x
+				 4. Press confirm
+				 !1. Be sure to have no objects selected, otherwise you will only make a texture for one specific object within the project!
+			a2. Verify UV maps line up, This just confirms at all faces of the object are being represented properly and there won't be any warped
+				 pixel errors throughout the model. This may also be affected by warped faces, so you might need to go back and redesign the object 
+				 to make the pixels play nicely. Sometimes it won't be an issue though.
+			a3. Draw on model.
+		
+		ANIMATING:
+			b1. Once you are done designing your model, you can animate it within the 'animate' tab.
+			b2. Create a new animation, and give it a simple name. (I.e. 'open_door' for opening a door, or 'faucet_on' for turning a faucet on.)
+			b3. Animate model.
+		
+		EXPORTING & IMPORTING:
+			c1. Export model as gltf file, save it to a new folder that is named after the model.
+			c2. Import gltf file into a new folder in Godot filesystem that is named after the model.
+			c3. Instantiate model into an active scene.
+			c4. Click 'Open in Editor' button on the right of the node of the newly added model 
+				 (The new model node will be named blockbench_export).
+			c5. Click 'Open Anyway' button, this opens the gltf file as an editable scene. 
+				 WARNING: If you click New Inherited, you will not be able to edit any imported scene properties!
+			c6. Change name of root node to model name.
+			c7. Save Scene as a new scene named after the model.
+			c8. Verify the model scene imports correctly, testing correct collision, and if it handles properly.
+			c9. Once verified, delete the model.gltf file that was imported to save space.
+
+	6. Handle Animation Workflow:
+		NO ANIMATIONS (Inanimate object like an apple, a crate, or a bed):
+			a1 Follow steps 5a1-5a3, then 5c1-5c9.
+		
+		SINGLE COMPLEX ANIMATION (Animations for the same model, an animation for a door opening, then an animation for a door closing):
+			b1 Follow steps 5a1-5a3, then 5b1-5b3, then 5c1-5c9
+		
+		MULTIPLE COMPLEX ANIMATIONS (Multiple animations for doors within a room need to be handled seperately):
+			c1. After designing your prime-model, Cut other sub-models that need to be animated individually by following step 4, 
+				 then pasting them into the empty project.
+			c2. For each sub-model, follow 6b1.
+			c3. For prime-model, verify all sub-models have been removed, then follow 6b1.
+			c4. Add all remaining sub-model scenes to the prime-model scene, the adjust their positioning like you would in blockbench.
+			c5. Save the prime-model scene. DO NOT delete sub-model scenes.

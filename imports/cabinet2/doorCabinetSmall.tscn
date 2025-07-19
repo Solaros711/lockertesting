@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=4 uid="uid://c78crip1h1e02"]
+
+[ext_resource type="Script" uid="uid://74sqcwpyk4ny" path="res://imports/cabinet2/doorCabinetSmall.gd" id="1_1aipg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4oke"]
+resource_name = "material_0"
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+cull_mode = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6ah3a"]
+_surfaces = [{
+"aabb": AABB(-0.867188, 0, -0.03125, 0.875, 0.5, 0.0625),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAwAAAAIAAAAEAAEAAQAFAAMABAAFAAEAAwAGAAAABgAEAAAABQAGAAMABgAHAAQABAAHAAUABQAHAAYA"),
+"name": "material_0",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAD//wAA//8AAP///////wAAAAD/////AAD//wAAAAAAAAAAAAD//wAAAAD//wAAAAAAAAAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ny6fd"]
+resource_name = "blockbench_export_mesh"
+_surfaces = [{
+"aabb": AABB(-0.867188, 0, -0.03125, 0.875, 0.5, 0.0625),
+"attribute_data": PackedByteArray("/38AAAAA/z8AAAAA/3//P/9//z8AAAAA/38AAAAA/z8AAP9//38AAP9//38AAAAA/3//fwAAAAD/fwAAAAD/f/9//z8AAAAA/38AAAAA/z//fwAAAAD/PwAAAAD/f/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_l4oke"),
+"name": "material_0",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA/7///wAA////v/////////+///8AAAAA/78AAAAA////vwAA//8AAP+/AAD//////78AAAAAAAD/vwAA//////+//////wAA/7//////////vwAA//8AAP+///8AAAAA/78AAAAA////v///AAD///+/AAAAAAAA/7///wAA//8AgAAA/////wCA////////AIAAAAAA//8AgAAA//8AAP////8AAAAA////////AAD//wAAAAAAAP///38AAP9/AAD/fwAA/38AAP9/////f////3////9///////9/////f////3////9/AAD/fwAA/38AAP9/AAD/f/9/////f////3////9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_6ah3a")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nc2us"]
+data = PackedVector3Array(0.0078125, 0.5, -0.03125, 0.0078125, 0, 0.03125, 0.0078125, 0.5, 0.03125, 0.0078125, 0.5, -0.03125, 0.0078125, 0, -0.03125, 0.0078125, 0, 0.03125, -0.867188, 0, 0.03125, -0.867188, 0.5, -0.03125, -0.867188, 0.5, 0.03125, -0.867188, 0, 0.03125, -0.867188, 0, -0.03125, -0.867188, 0.5, -0.03125, -0.867188, 0.5, 0.03125, 0.0078125, 0.5, -0.03125, 0.0078125, 0.5, 0.03125, -0.867188, 0.5, 0.03125, -0.867188, 0.5, -0.03125, 0.0078125, 0.5, -0.03125, 0.0078125, 0, -0.03125, -0.867188, 0, 0.03125, 0.0078125, 0, 0.03125, 0.0078125, 0, -0.03125, -0.867188, 0, -0.03125, -0.867188, 0, 0.03125, 0.0078125, 0, 0.03125, -0.867188, 0.5, 0.03125, 0.0078125, 0.5, 0.03125, 0.0078125, 0, 0.03125, -0.867188, 0, 0.03125, -0.867188, 0.5, 0.03125, -0.867188, 0.5, -0.03125, 0.0078125, 0, -0.03125, 0.0078125, 0.5, -0.03125, -0.867188, 0.5, -0.03125, -0.867188, 0, -0.03125, 0.0078125, 0, -0.03125)
+
+[sub_resource type="Animation" id="Animation_e3fq3"]
+resource_name = "close"
+length = 0.25
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node/top_door")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.0436194, 0, 0.999048, 0.2, 1, 0, 0.00872653, 0, 0.999962, 0.233333, 1, 0, 0.00290888, 0, 0.999996, 0.25, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_2kunw"]
+resource_name = "open"
+length = 0.25
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node/top_door")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.25, 1, 0, 0.0436194, 0, 0.999048)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0e5j5"]
+_data = {
+&"close": SubResource("Animation_e3fq3"),
+&"open": SubResource("Animation_2kunw")
+}
+
+[node name="doorCabinetSmall" type="Node3D"]
+
+[node name="Node" type="Node3D" parent="."]
+
+[node name="top_door" type="Node3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.433594, 0.273438, -0.03125)
+
+[node name="cuboid" type="MeshInstance3D" parent="Node/top_door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0117188, -0.273438, 0.03125)
+mesh = SubResource("ArrayMesh_ny6fd")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/top_door/cuboid" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_1aipg")
+animation_player = NodePath("../../../../AnimationPlayer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/top_door/cuboid/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_nc2us")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0e5j5")
+}

@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bj8mgm514a5vj" path="res://imports/character test/charactertest.gltf" id="10_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://csylkj73mu55m" path="res://imports/rv/rv test6.tscn" id="11_q5onr"]
 [ext_resource type="PackedScene" uid="uid://bctypghj2kq7i" path="res://imports/character test/characterrobot.gltf" id="12_jhx03"]
-[ext_resource type="PackedScene" uid="uid://bjb2hvxtyaxwc" path="res://imports/cabinet/cabinet.tscn" id="12_q5onr"]
+[ext_resource type="PackedScene" uid="uid://cjdvej4n8g00i" path="res://imports/cabinet2/cabinet.tscn" id="12_q5onr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3sb7"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -73,11 +73,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.494322, 0.731478, 28.3337)
 script = ExtResource("1_71j4m")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="player"]
-transform = Transform3D(0.649721, 0, 0, 0, 0.796437, 0, 0, 0, 0.573376, 0, 0, 0)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_fj7yv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
-transform = Transform3D(0.610424, 0, 0, 0, 0.801552, 0, 0, 0, 0.400527, 0, 0, 0)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_tlwt5")
 
 [node name="head" type="Node3D" parent="player"]
@@ -119,7 +119,7 @@ use_collision = true
 size = Vector3(0.408725, 2, 43.9884)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.511629, -0.435831, 9.3806)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04429, -0.435831, 18.5596)
 material_override = SubResource("StandardMaterial3D_w7kh3")
 use_collision = true
 
@@ -166,5 +166,5 @@ transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 6.68379, -0.499, 4.5746
 [node name="rv" parent="." instance=ExtResource("11_q5onr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.168623, -0.499, 21.8103)
 
-[node name="cabinet" parent="." instance=ExtResource("12_q5onr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7436, -0.237281, 24.1496)
+[node name="cabinet2" parent="." instance=ExtResource("12_q5onr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.22113, -0.486488, 16.7149)

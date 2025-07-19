@@ -150,17 +150,17 @@ height = 4.26904
 transform = Transform3D(0.787064, -0.616871, 0, 0.616871, 0.787064, 0, 0, 0, 1, 7.6571, -0.0568781, 8.27894)
 use_collision = true
 
-[node name="blockbench_export3" parent="." instance=ExtResource("8_4mrxx")]
+[node name="blocks" parent="." instance=ExtResource("8_4mrxx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.58836, -0.498999, 7.33168)
 
-[node name="blockbench_export4" parent="." instance=ExtResource("10_w7kh3")]
+[node name="ghoul" parent="." instance=ExtResource("10_w7kh3")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -3.63192, -0.495351, 5.2707)
 
-[node name="blockbench_export7" parent="." instance=ExtResource("12_jhx03")]
+[node name="bot" parent="." instance=ExtResource("12_jhx03")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.90968, -0.295874, 3.50558)
 
-[node name="blockbench_export" parent="." instance=ExtResource("9_7r4gi")]
+[node name="truck" parent="." instance=ExtResource("9_7r4gi")]
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 6.68379, -0.499, 4.57465)
 
-[node name="blockbench_export2" parent="." instance=ExtResource("11_q5onr")]
+[node name="rv" parent="." instance=ExtResource("11_q5onr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.168623, -0.499, 21.8103)

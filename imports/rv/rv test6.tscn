@@ -1391,7 +1391,7 @@ mesh = SubResource("ArrayMesh_shsdc")
 skeleton = NodePath("")
 
 [node name="door_body" type="Node3D" parent="Node/root/outer/walls/east/door"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.68359, 1.10547, 1.69141)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68359, 1.10547, 1.69141)
 
 [node name="door_handle" type="Node3D" parent="Node/root/outer/walls/east/door/door_body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0898438, -0.0195313, -0.941406)

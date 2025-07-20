@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnijisyh4l7e5"
-path="res://.godot/imported/truck4_0.png-a56d1988091d2c1c445fc0134c344c8b.ctex"
+uid="uid://dh1jmmsunxojd"
+path="res://.godot/imported/truck2_1.png-9509108212d6b9041a46f3037cac754a.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "0647596d5c18f942ccbbd821d83b7bec"
+"md5": "8900d886fd51baec9dbc40ba6b1ce611"
 }
 
 [deps]
 
-source_file="res://imports/truck/truck4_0.png"
-dest_files=["res://.godot/imported/truck4_0.png-a56d1988091d2c1c445fc0134c344c8b.ctex"]
+source_file="res://imports/truck/truck2_1.png"
+dest_files=["res://.godot/imported/truck2_1.png-9509108212d6b9041a46f3037cac754a.ctex"]
 
 [params]
 

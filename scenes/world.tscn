@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c17fm0aekfsvg"]
+[gd_scene load_steps=34 format=3 uid="uid://c17fm0aekfsvg"]
 
 [ext_resource type="Script" uid="uid://c1b455a5ckggl" path="res://scripts/player.gd" id="1_71j4m"]
 [ext_resource type="Script" uid="uid://b5r8dgivwddrd" path="res://scenes/player_rayCast.gd" id="2_e3hyu"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://uqgprfow2855" path="res://textures/wood.jpg" id="5_7r4gi"]
 [ext_resource type="Texture2D" uid="uid://3ok0l6vsdfep" path="res://textures/palmleaf.png" id="6_jhx03"]
 [ext_resource type="PackedScene" uid="uid://35y81inm0lf3" path="res://imports/scaled towers/stacked scaled layersx16col.gltf" id="8_4mrxx"]
+[ext_resource type="PackedScene" uid="uid://qc7sh82kkh63" path="res://imports/terrain/bridge2.gltf" id="8_lakw3"]
 [ext_resource type="PackedScene" uid="uid://bj8mgm514a5vj" path="res://imports/character test/charactertest.gltf" id="10_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://csylkj73mu55m" path="res://imports/rv/rv test6.tscn" id="11_q5onr"]
 [ext_resource type="PackedScene" uid="uid://bctypghj2kq7i" path="res://imports/character test/characterrobot.gltf" id="12_jhx03"]
@@ -169,6 +170,9 @@ use_collision = true
 transform = Transform3D(0.901812, -0.162663, -0.400345, -0.341021, 0.301113, -0.890525, 0.265404, 0.939613, 0.216076, -0.366487, 1.02597, 22.4591)
 material_override = SubResource("StandardMaterial3D_o8fc1")
 size = Vector3(2.04504, 0.001, 2.65064)
+
+[node name="blockbench_export4" parent="." instance=ExtResource("8_lakw3")]
+transform = Transform3D(59.7453, 0, -90.6753, 0, 150, 0, 45.3376, 0, 119.491, -255.923, 32.311, 283.607)
 
 [node name="world box" type="Node3D" parent="."]
 transform = Transform3D(5.905, 0, 0, 0, 1, 0, 0, 0, 1, 10.459, 142.717, 61.8386)

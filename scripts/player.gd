@@ -37,8 +37,12 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		if Input.is_action_pressed("sprint"):
+			velocity.x = direction.x * SPEED * SPEED
+			velocity.z = direction.z * SPEED * SPEED
+		else:
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
 	else:
 		# Stops the player sooner if on ground.
 		if is_on_floor():

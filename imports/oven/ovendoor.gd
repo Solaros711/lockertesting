@@ -4,12 +4,12 @@ extends StaticBody3D
 var interactable = true
 
 @export var animation_player: AnimationPlayer
-@onready var oven = $oven.door_state
+#@onready var oven = $oven.door_state
 
 func interact():
 	if interactable == true:
 		interactable = false
-		print(oven)
+		#print(oven)
 		$oven.set_door_status(!$oven.get_door_status())
 		if $oven.get_door_status() == false:
 			animation_player.play("open")

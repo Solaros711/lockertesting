@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 				sun_color.b = sun_color.b + 0.0005
 			light_color = sun_color
 		#Turns sun color from day to dusk
-		if time > 2.142:
+		if time > 2.542:
 			var sun_color = light_color
 			if sun_color.g > 0.4705:
 				sun_color.g = sun_color.g - 0.0005

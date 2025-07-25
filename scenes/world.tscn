@@ -1,10 +1,10 @@
 [gd_scene load_steps=36 format=3 uid="uid://c17fm0aekfsvg"]
 
-[ext_resource type="Script" uid="uid://c1b455a5ckggl" path="res://scripts/player.gd" id="1_71j4m"]
-[ext_resource type="Script" uid="uid://c55oadc3idcc5" path="res://scenes/sun.gd" id="1_pm21f"]
-[ext_resource type="Script" uid="uid://b5r8dgivwddrd" path="res://scenes/player_rayCast.gd" id="2_e3hyu"]
+[ext_resource type="Script" uid="uid://c1b455a5ckggl" path="res://scripts/player/player.gd" id="1_71j4m"]
+[ext_resource type="Script" uid="uid://c55oadc3idcc5" path="res://scripts/sky/sun.gd" id="1_pm21f"]
+[ext_resource type="Script" uid="uid://b5r8dgivwddrd" path="res://scripts/player/player_rayCast.gd" id="2_e3hyu"]
 [ext_resource type="Texture2D" uid="uid://bwdyfo7ddvird" path="res://textures/grass.jpg" id="2_qfnet"]
-[ext_resource type="Script" uid="uid://by5ppygkgmbl4" path="res://scenes/world_environment.gd" id="3_2lf6f"]
+[ext_resource type="Script" uid="uid://by5ppygkgmbl4" path="res://scripts/sky/world_environment.gd" id="3_2lf6f"]
 [ext_resource type="Texture2D" uid="uid://xkfjdwhex18c" path="res://textures/concrete.jpg" id="3_i7141"]
 [ext_resource type="PackedScene" uid="uid://eblxebeslqey" path="res://imports/oven/Oven.gltf" id="3_xo05s"]
 [ext_resource type="Texture2D" uid="uid://clsh53qwfapdh" path="res://textures/cobblestone.jpg" id="4_4mrxx"]
@@ -22,8 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://cq2gfytx2i12e" path="res://imports/terrain/TERRAIN3.tscn" id="17_7t5mc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3sb7"]
-sky_top_color = Color(0.250505, 0.471067, 0.954149, 1)
-sky_horizon_color = Color(0.768482, 0.775828, 0.787428, 1)
+sky_top_color = Color(0.25098, 0.470588, 0.952941, 1)
+sky_horizon_color = Color(0.768627, 0.776471, 0.788235, 1)
 ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 
 [sub_resource type="Sky" id="Sky_fj7yv"]

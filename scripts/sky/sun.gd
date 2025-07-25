@@ -40,3 +40,4 @@ func do_sun_move():
 			light_color = sun_color
 		time += 0.0005
 		rotate_x(-0.0005)
+		print(time*(180/3.14159))

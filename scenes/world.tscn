@@ -116,7 +116,6 @@ albedo_color = Color(1, 0, 0, 1)
 [node name="TimeSystem" type="Node" parent="."]
 script = ExtResource("1_oo54l")
 date_time = SubResource("Resource_ctatt")
-ticks_per_second = 10
 metadata/_custom_type_script = "uid://ditpaf5ylw1qw"
 
 [node name="world lighting" type="Node3D" parent="."]

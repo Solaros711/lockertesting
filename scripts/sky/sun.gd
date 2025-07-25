@@ -3,7 +3,8 @@ extends DirectionalLight3D
 #end of day occurs as 3.142 lmao
 const DAWN_COLOR = Color(1.0, 0.4705, 0, 1.0)
 const DAY_COLOR = Color(1.0, 0.9686, 0.6235, 1.0)
-const SUN_ROTATE: float = 0.0000726
+const SUN_ROTATE: float = 0.00003644
+var cur_time: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,9 +13,16 @@ func _ready() -> void:
 
 #rotates the sun on the x axis, changing the color based on where it is on the horizon
 func do_sun_move(time: DateTime):
+	if cur_time != time.hours:
+		cur_time = time.hours
+		print(rotation.x*(180/3.14159))
 	if(rotation.x > 0.10472):
 		rotate_x(SUN_ROTATE)
 		light_energy = 0.0
+		#Resets angle of the sun so the inaccuracy doesn't break days later in time.
+		if time.hours == 0 && time.minutes <= 0 && time.seconds <= 5:
+			rotation_degrees = Vector3(90, 0, 0)
+			print(str(rotation_degrees)+" degrees")
 	else:
 		light_energy = 1.0
 		if time.hours <= 6 && time.minutes <= 5:

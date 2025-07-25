@@ -27,7 +27,7 @@
 script = ExtResource("2_kpybi")
 seconds = 0
 minutes = 0
-hours = 6
+hours = 0
 days = 27
 years = 2492
 metadata/_custom_type_script = "uid://cpqh2tucvqh4r"
@@ -117,7 +117,7 @@ albedo_color = Color(1, 0, 0, 1)
 script = ExtResource("1_oo54l")
 date_time = SubResource("Resource_ctatt")
 sun = NodePath("../world lighting/Sun")
-ticks_per_second = 60
+ticks_per_second = 30
 metadata/_custom_type_script = "uid://ditpaf5ylw1qw"
 
 [node name="world lighting" type="Node3D" parent="."]
@@ -128,7 +128,7 @@ environment = SubResource("Environment_tlwt5")
 script = ExtResource("3_2lf6f")
 
 [node name="Sun" type="DirectionalLight3D" parent="world lighting"]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 1.29396, 5.92958, 8.59867)
+transform = Transform3D(1, 0, 0, 0, -0.994522, -0.104528, 0, 0.104528, -0.994522, 1.29396, 5.92958, 8.59867)
 light_color = Color(1, 0.470588, 0, 1)
 light_angular_distance = 0.1
 shadow_enabled = true

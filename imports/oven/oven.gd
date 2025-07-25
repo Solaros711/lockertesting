@@ -1,9 +1,15 @@
-@tool
 extends Node3D
 
-@export var door_state = false:
-	set(new_state):
-		door_state = new_state
+var toggle = true
 
-func _ready() -> void:
-	pass # Replace with function body.
+@export var animation_player: AnimationPlayer
+
+func animate():
+		toggle = !toggle
+		if toggle == false:
+			animation_player.play("open")
+			print("opening door!")
+		if toggle == true:
+			animation_player.play("close")
+			print("closing door!")
+		

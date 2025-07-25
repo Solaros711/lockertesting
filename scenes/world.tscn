@@ -113,9 +113,11 @@ albedo_color = Color(1, 0, 0, 1)
 
 [node name="world" type="Node3D"]
 
-[node name="TimeSystem" type="Node" parent="."]
+[node name="TimeSystem" type="Node" parent="." node_paths=PackedStringArray("sun")]
 script = ExtResource("1_oo54l")
 date_time = SubResource("Resource_ctatt")
+sun = NodePath("../world lighting/Sun")
+ticks_per_second = 60
 metadata/_custom_type_script = "uid://ditpaf5ylw1qw"
 
 [node name="world lighting" type="Node3D" parent="."]
@@ -126,7 +128,7 @@ environment = SubResource("Environment_tlwt5")
 script = ExtResource("3_2lf6f")
 
 [node name="Sun" type="DirectionalLight3D" parent="world lighting"]
-transform = Transform3D(-0.475409, -0.695518, -0.538741, 0.856909, -0.504758, -0.104528, -0.199232, -0.511346, 0.835962, 1.29396, 5.92958, 8.59867)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 1.29396, 5.92958, 8.59867)
 light_color = Color(1, 0.470588, 0, 1)
 light_angular_distance = 0.1
 shadow_enabled = true

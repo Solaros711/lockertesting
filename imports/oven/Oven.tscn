@@ -1130,228 +1130,231 @@ _data = {
 
 [node name="Node" type="Node3D" parent="."]
 
-[node name="oven" type="Node3D" parent="Node"]
+[node name="Oven" type="Node3D" parent="Node" node_paths=PackedStringArray("animation_player")]
 script = ExtResource("1_yw5qa")
+animation_player = NodePath("../../AnimationPlayer")
 
-[node name="cylinder" type="MeshInstance3D" parent="Node/oven"]
+[node name="cylinder" type="MeshInstance3D" parent="Node/Oven"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -0.34375, 0.890625, -0.421875)
 mesh = SubResource("ArrayMesh_5wgt7")
 skeleton = NodePath("")
 
-[node name="cylinder2" type="MeshInstance3D" parent="Node/oven"]
+[node name="cylinder2" type="MeshInstance3D" parent="Node/Oven"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -0.15625, 0.890625, -0.421875)
 mesh = SubResource("ArrayMesh_2qx23")
 skeleton = NodePath("")
 
-[node name="cylinder3" type="MeshInstance3D" parent="Node/oven"]
+[node name="cylinder3" type="MeshInstance3D" parent="Node/Oven"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.34375, 0.890625, -0.421875)
 mesh = SubResource("ArrayMesh_vxshf")
 skeleton = NodePath("")
 
-[node name="cylinder4" type="MeshInstance3D" parent="Node/oven"]
+[node name="cylinder4" type="MeshInstance3D" parent="Node/Oven"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.15625, 0.890625, -0.421875)
 mesh = SubResource("ArrayMesh_sjok5")
 skeleton = NodePath("")
 
-[node name="oven" type="MeshInstance3D" parent="Node/oven"]
+[node name="oven" type="MeshInstance3D" parent="Node/Oven"]
 mesh = SubResource("ArrayMesh_8nrvh")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node/oven/oven"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/Oven/oven"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/oven/oven/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/Oven/oven/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_cb7ta")
 
-[node name="Heater" type="Node3D" parent="Node/oven"]
+[node name="Heater" type="Node3D" parent="Node/Oven"]
 
-[node name="heater" type="MeshInstance3D" parent="Node/oven/Heater"]
+[node name="heater" type="MeshInstance3D" parent="Node/Oven/Heater"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09375, -0.113281)
 mesh = SubResource("ArrayMesh_jd1mq")
 skeleton = NodePath("")
 
-[node name="Door" type="Node3D" parent="Node/oven"]
-transform = Transform3D(1, 0, 0, 0, 0.0871557, 0.996195, 0, -0.996195, 0.0871557, 0, 0.0625, -0.5)
+[node name="Door" type="Node3D" parent="Node/Oven"]
+transform = Transform3D(1, 0, 0, 0, 0.0871556, 0.996195, 0, -0.996195, 0.0871556, 0, 0.0625, -0.5)
 
-[node name="cuboid" type="MeshInstance3D" parent="Node/oven/Door"]
+[node name="cuboid" type="MeshInstance3D" parent="Node/Oven/Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15625, -0.03125)
 mesh = SubResource("ArrayMesh_i1hs0")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node/oven/Door/cuboid" node_paths=PackedStringArray("animation_player")]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/Oven/Door/cuboid" node_paths=PackedStringArray("oven")]
 script = ExtResource("2_4tkiq")
-animation_player = NodePath("../../../../../AnimationPlayer")
+oven = NodePath("../../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/oven/Door/cuboid/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/Oven/Door/cuboid/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_l368t")
 
-[node name="Top Rack" type="Node3D" parent="Node/oven"]
+[node name="Top Rack" type="Node3D" parent="Node/Oven"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.453125, -0.3125)
 
-[node name="rack" type="MeshInstance3D" parent="Node/oven/Top Rack"]
+[node name="rack" type="MeshInstance3D" parent="Node/Oven/Top Rack"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0625)
 mesh = SubResource("ArrayMesh_mfj8w")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node/oven/Top Rack/rack"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/Oven/Top Rack/rack" node_paths=PackedStringArray("oven")]
 script = ExtResource("3_n8b40")
+oven = NodePath("../../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/oven/Top Rack/rack/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/Oven/Top Rack/rack/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_os7ns")
 
-[node name="Bin" type="Node3D" parent="Node/oven/Top Rack"]
+[node name="Bin" type="Node3D" parent="Node/Oven/Top Rack"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.453125, 0)
 
-[node name="Tomato" type="Node3D" parent="Node/oven/Top Rack/Bin"]
+[node name="Tomato" type="Node3D" parent="Node/Oven/Top Rack/Bin"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.210938, 0.386719, 1.05859)
 
-[node name="sphere" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Tomato"]
+[node name="sphere" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Tomato"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.175781, -1.00391)
 mesh = SubResource("ArrayMesh_85bf6")
 skeleton = NodePath("")
 
-[node name="cuboid" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Tomato"]
+[node name="cuboid" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Tomato"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.207031, -1.00391)
 mesh = SubResource("ArrayMesh_oj4es")
 skeleton = NodePath("")
 
-[node name="Broccoli" type="Node3D" parent="Node/oven/Top Rack/Bin"]
+[node name="Broccoli" type="Node3D" parent="Node/Oven/Top Rack/Bin"]
 transform = Transform3D(0.411274, -0.868721, 0.276002, 0.253187, 0.399756, 0.880961, -0.875642, -0.292436, 0.384358, -0.175781, 0.578125, -0.0507813)
 
-[node name="cuboid2" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Broccoli"]
+[node name="cuboid2" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Broccoli"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0820313, -0.00390625)
 mesh = SubResource("ArrayMesh_ter5i")
 skeleton = NodePath("")
 
-[node name="cuboid3" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Broccoli"]
+[node name="cuboid3" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Broccoli"]
 transform = Transform3D(1, 0, 0, 0, 0.92388, 0.382683, 0, -0.382683, 0.92388, 0, -0.015625, -0.0195313)
 mesh = SubResource("ArrayMesh_ose0v")
 skeleton = NodePath("")
 
-[node name="cuboid4" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Broccoli"]
+[node name="cuboid4" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Broccoli"]
 transform = Transform3D(0.88112, 0.300706, -0.364972, -0.403115, 0.88112, -0.247238, 0.247238, 0.364972, 0.897591, 0.0078125, -0.0234375, 0.0078125)
 mesh = SubResource("ArrayMesh_f7ev5")
 skeleton = NodePath("")
 
-[node name="cuboid5" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Broccoli"]
+[node name="cuboid5" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Broccoli"]
 transform = Transform3D(0.877093, -0.428603, -0.216809, 0.447192, 0.893406, 0.0429526, 0.175289, -0.134629, 0.975269, -0.015625, -0.0195313, -0.0117188)
 mesh = SubResource("ArrayMesh_tm8l7")
 skeleton = NodePath("")
 
-[node name="cuboid6" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Broccoli"]
+[node name="cuboid6" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Broccoli"]
 transform = Transform3D(0.81002, 0.477499, 0.340386, -0.509412, 0.860507, 0.00512069, -0.29046, -0.177545, 0.940272, 0.015625, -0.03125, -0.0078125)
 mesh = SubResource("ArrayMesh_l4vvw")
 skeleton = NodePath("")
 
-[node name="cuboid7" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Broccoli"]
+[node name="cuboid7" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Broccoli"]
 transform = Transform3D(0.728293, -0.296198, 0.617945, 0.531121, 0.813798, -0.235889, -0.433013, 0.5, 0.75, -0.0117188, -0.0234375, 0.0117188)
 mesh = SubResource("ArrayMesh_vsajv")
 skeleton = NodePath("")
 
-[node name="sphere2" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Broccoli"]
+[node name="sphere2" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Broccoli"]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 0, 0.0351563, 0.0078125)
 mesh = SubResource("ArrayMesh_lbbyc")
 skeleton = NodePath("")
 
-[node name="Cauliflower" type="Node3D" parent="Node/oven/Top Rack/Bin"]
+[node name="Cauliflower" type="Node3D" parent="Node/Oven/Top Rack/Bin"]
 transform = Transform3D(0.453154, 0.711309, -0.5373, -0.843391, 0.5373, -1.49012e-08, 0.288691, 0.453154, 0.843391, 0.175781, 0.542969, -0.355469)
 
-[node name="cuboid8" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Cauliflower"]
+[node name="cuboid8" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Cauliflower"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0078125, -0.046875, -0.00390625)
 mesh = SubResource("ArrayMesh_7x2xl")
 skeleton = NodePath("")
 
-[node name="cuboid9" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Cauliflower"]
+[node name="cuboid9" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Cauliflower"]
 transform = Transform3D(1, 0, 0, 0, 0.92388, 0.382683, 0, -0.382683, 0.92388, -0.0078125, 0.0195313, -0.0195313)
 mesh = SubResource("ArrayMesh_jd0fk")
 skeleton = NodePath("")
 
-[node name="cuboid10" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Cauliflower"]
+[node name="cuboid10" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Cauliflower"]
 transform = Transform3D(0.88112, 0.300706, -0.364972, -0.403115, 0.88112, -0.247238, 0.247238, 0.364972, 0.897591, 0, 0.0117188, 0.0078125)
 mesh = SubResource("ArrayMesh_egkkq")
 skeleton = NodePath("")
 
-[node name="cuboid11" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Cauliflower"]
+[node name="cuboid11" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Cauliflower"]
 transform = Transform3D(0.877093, -0.428603, -0.216809, 0.447192, 0.893406, 0.0429526, 0.175289, -0.134629, 0.975269, -0.0234375, 0.015625, -0.0117188)
 mesh = SubResource("ArrayMesh_w61fq")
 skeleton = NodePath("")
 
-[node name="cuboid12" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Cauliflower"]
+[node name="cuboid12" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Cauliflower"]
 transform = Transform3D(0.81002, 0.477499, 0.340386, -0.509412, 0.860507, 0.00512069, -0.29046, -0.177545, 0.940272, 0.0078125, 0.00390625, -0.0078125)
 mesh = SubResource("ArrayMesh_nyxua")
 skeleton = NodePath("")
 
-[node name="cuboid13" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Cauliflower"]
+[node name="cuboid13" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Cauliflower"]
 transform = Transform3D(0.728293, -0.296198, 0.617945, 0.531121, 0.813798, -0.235889, -0.433013, 0.5, 0.75, -0.0195313, 0.0117188, 0.0117188)
 mesh = SubResource("ArrayMesh_bsv34")
 skeleton = NodePath("")
 
-[node name="sphere3" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Cauliflower"]
+[node name="sphere3" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Cauliflower"]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -0.0078125, 0.0703125, 0.0078125)
 mesh = SubResource("ArrayMesh_blg6a")
 skeleton = NodePath("")
 
-[node name="Carrot" type="Node3D" parent="Node/oven/Top Rack/Bin"]
+[node name="Carrot" type="Node3D" parent="Node/Oven/Top Rack/Bin"]
 transform = Transform3D(0.382683, 0.915976, 0.120591, 0.120591, -0.178932, 0.976443, 0.915976, -0.359127, -0.178932, -0.195313, 0.546875, -0.3125)
 
-[node name="cone" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Carrot"]
+[node name="cone" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Carrot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0273438, 0)
 mesh = SubResource("ArrayMesh_f1h15")
 skeleton = NodePath("")
 
-[node name="cone2" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Carrot"]
+[node name="cone2" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Carrot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0273438, 0)
 mesh = SubResource("ArrayMesh_8tkr0")
 skeleton = NodePath("")
 
-[node name="cuboid14" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Carrot"]
+[node name="cuboid14" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Carrot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.351563, -0.046875)
 mesh = SubResource("ArrayMesh_pqiim")
 skeleton = NodePath("")
 
-[node name="cuboid15" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Carrot"]
+[node name="cuboid15" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Carrot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0742188, 0)
 mesh = SubResource("ArrayMesh_08vli")
 skeleton = NodePath("")
 
-[node name="cuboid16" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Carrot"]
+[node name="cuboid16" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Carrot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.351563, -0.046875)
 mesh = SubResource("ArrayMesh_mvd00")
 skeleton = NodePath("")
 
-[node name="cuboid17" type="MeshInstance3D" parent="Node/oven/Top Rack/Bin/Carrot"]
+[node name="cuboid17" type="MeshInstance3D" parent="Node/Oven/Top Rack/Bin/Carrot"]
 transform = Transform3D(0.539978, -0.281095, 0.793353, 0.461749, 0.887011, 0, -0.703713, 0.36633, 0.608761, 0.046875, -0.304688, -0.132813)
 mesh = SubResource("ArrayMesh_q3ufu")
 skeleton = NodePath("")
 
-[node name="Bottom Rack" type="Node3D" parent="Node/oven"]
+[node name="Bottom Rack" type="Node3D" parent="Node/Oven"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1875, -0.75)
 
-[node name="rack2" type="MeshInstance3D" parent="Node/oven/Bottom Rack"]
+[node name="rack2" type="MeshInstance3D" parent="Node/Oven/Bottom Rack"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0625)
 mesh = SubResource("ArrayMesh_riap2")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node/oven/Bottom Rack/rack2" node_paths=PackedStringArray("animation_player")]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/Oven/Bottom Rack/rack2" node_paths=PackedStringArray("oven")]
 script = ExtResource("4_knsta")
-animation_player = NodePath("../../../../../AnimationPlayer")
+oven = NodePath("../../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/oven/Bottom Rack/rack2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/Oven/Bottom Rack/rack2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_t0trr")
 
-[node name="Roast" type="Node3D" parent="Node/oven/Bottom Rack"]
+[node name="Roast" type="Node3D" parent="Node/Oven/Bottom Rack"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1875, 0)
 
-[node name="roast" type="MeshInstance3D" parent="Node/oven/Bottom Rack/Roast"]
+[node name="roast" type="MeshInstance3D" parent="Node/Oven/Bottom Rack/Roast"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.296875, -0.148438)
 mesh = SubResource("ArrayMesh_bhocr")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node/oven/Bottom Rack/Roast/roast"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/Oven/Bottom Rack/Roast/roast"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/oven/Bottom Rack/Roast/roast/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/Oven/Bottom Rack/Roast/roast/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_fnfd4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_3grdg")
 }
+autoplay = "close"

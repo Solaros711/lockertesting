@@ -75,11 +75,11 @@ func increase_by_sec(delta_seconds: float) -> void:
 				handle_season(month)
 				break
 	
-	#removes remainder for time
+	#resets time for next calculation
 	seconds = seconds % 60
 	minutes = minutes % 60
 	hours = hours % 24
-	print_date()
+	#print_date()
 
 #Handles assigning a visable season based on the month.
 func handle_season(month: int):

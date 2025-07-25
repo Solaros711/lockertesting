@@ -1,9 +1,10 @@
-[gd_scene load_steps=35 format=3 uid="uid://c17fm0aekfsvg"]
+[gd_scene load_steps=36 format=3 uid="uid://c17fm0aekfsvg"]
 
 [ext_resource type="Script" uid="uid://c1b455a5ckggl" path="res://scripts/player.gd" id="1_71j4m"]
 [ext_resource type="Script" uid="uid://c55oadc3idcc5" path="res://scenes/sun.gd" id="1_pm21f"]
 [ext_resource type="Script" uid="uid://b5r8dgivwddrd" path="res://scenes/player_rayCast.gd" id="2_e3hyu"]
 [ext_resource type="Texture2D" uid="uid://bwdyfo7ddvird" path="res://textures/grass.jpg" id="2_qfnet"]
+[ext_resource type="Script" uid="uid://by5ppygkgmbl4" path="res://scenes/world_environment.gd" id="3_2lf6f"]
 [ext_resource type="Texture2D" uid="uid://xkfjdwhex18c" path="res://textures/concrete.jpg" id="3_i7141"]
 [ext_resource type="PackedScene" uid="uid://eblxebeslqey" path="res://imports/oven/Oven.gltf" id="3_xo05s"]
 [ext_resource type="Texture2D" uid="uid://clsh53qwfapdh" path="res://textures/cobblestone.jpg" id="4_4mrxx"]
@@ -31,7 +32,11 @@ sky_material = SubResource("ProceduralSkyMaterial_f3sb7")
 [sub_resource type="Environment" id="Environment_tlwt5"]
 background_mode = 2
 sky = SubResource("Sky_fj7yv")
+ambient_light_sky_contribution = 0.07
+ambient_light_energy = 0.22
+reflected_light_source = 2
 tonemap_mode = 2
+ssr_enabled = true
 ssr_fade_out = 0.143587
 ssao_enabled = true
 ssao_intensity = 11.75
@@ -39,9 +44,14 @@ glow_enabled = true
 glow_intensity = 0.5
 glow_bloom = 0.02
 glow_blend_mode = 0
+fog_mode = 1
+fog_light_energy = 0.78
+fog_sun_scatter = 0.11
+fog_density = 1.0
+fog_depth_curve = 1.09548
 volumetric_fog_enabled = true
 volumetric_fog_anisotropy = 0.6
-volumetric_fog_length = 1.0
+volumetric_fog_length = 4.0
 volumetric_fog_sky_affect = 0.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fj7yv"]
@@ -95,8 +105,12 @@ albedo_color = Color(1, 0, 0, 1)
 [node name="world lighting" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 142.717, 0)
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="world lighting"]
+environment = SubResource("Environment_tlwt5")
+script = ExtResource("3_2lf6f")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="world lighting"]
-transform = Transform3D(-0.42662, -0.724257, -0.541708, 0.861629, -0.507538, -2.28655e-09, -0.274938, -0.466752, 0.840567, 1.29396, 5.92958, 8.59867)
+transform = Transform3D(-0.475409, -0.695518, -0.538741, 0.856909, -0.504758, -0.104528, -0.199232, -0.511346, 0.835962, 1.29396, 5.92958, 8.59867)
 light_color = Color(1, 0.470588, 0, 1)
 light_angular_distance = 0.5
 shadow_enabled = true
@@ -114,9 +128,6 @@ shadow_enabled = true
 
 [node name="TERRAIN2" parent="world lighting/CSGBox3D" instance=ExtResource("16_dss4m")]
 transform = Transform3D(-0.99997, 0, -0.00774915, 0, 1, 0, 0.00774915, 0, -0.99997, -33.7822, -1.68945, -13.4502)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_tlwt5")
 
 [node name="player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9533, 143.449, 90.1723)

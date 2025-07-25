@@ -1,11 +1,12 @@
 extends DirectionalLight3D
 var time = 0.0
 #end of day occurs as 3.142 lmao
-const DAY_COLOR = Color(1.0, 0.4705, 0, 1.0)
+const DAWN_COLOR = Color(1.0, 0.4705, 0, 1.0)
+const DAY_COLOR = Color(1.0, 0.9686, 0.6235, 1.0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	light_color = DAY_COLOR
+	light_color = DAWN_COLOR
 	pass # Replace with function body.
 
 
@@ -21,23 +22,23 @@ func do_sun_move():
 	else:
 		light_energy = 1.0
 		if time == 0.0:
-			light_color = DAY_COLOR
+			light_color = DAWN_COLOR
 		#Turns sun color from dawn to day
 		if time < 1.0:
 			var sun_color = light_color
-			if sun_color.g < 1.0:
+			if sun_color.g < DAY_COLOR.g:
 				sun_color.g = sun_color.g + 0.0005
-			if sun_color.b < 1.0:
+			if sun_color.b < DAY_COLOR.b:
 				sun_color.b = sun_color.b + 0.0005
 			light_color = sun_color
 		#Turns sun color from day to dusk
 		if time > 2.642:
 			var sun_color = light_color
-			if sun_color.g > 0.4705:
+			if sun_color.g > DAWN_COLOR.g:
 				sun_color.g = sun_color.g - 0.0005
-			if sun_color.b > 0.0:
+			if sun_color.b > DAWN_COLOR.b:
 				sun_color.b = sun_color.b - 0.0005
 			light_color = sun_color
 		time += 0.0005
 		rotate_x(-0.0005)
-		print(time*(180/3.14159))
+		#print(time*(180/3.14159))

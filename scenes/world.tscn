@@ -1,8 +1,10 @@
-[gd_scene load_steps=36 format=3 uid="uid://c17fm0aekfsvg"]
+[gd_scene load_steps=39 format=3 uid="uid://c17fm0aekfsvg"]
 
 [ext_resource type="Script" uid="uid://c1b455a5ckggl" path="res://scripts/player/player.gd" id="1_71j4m"]
+[ext_resource type="Script" uid="uid://ditpaf5ylw1qw" path="res://scripts/time/time_system.gd" id="1_oo54l"]
 [ext_resource type="Script" uid="uid://c55oadc3idcc5" path="res://scripts/sky/sun.gd" id="1_pm21f"]
 [ext_resource type="Script" uid="uid://b5r8dgivwddrd" path="res://scripts/player/player_rayCast.gd" id="2_e3hyu"]
+[ext_resource type="Script" uid="uid://cpqh2tucvqh4r" path="res://scripts/time/date_time.gd" id="2_kpybi"]
 [ext_resource type="Texture2D" uid="uid://bwdyfo7ddvird" path="res://textures/grass.jpg" id="2_qfnet"]
 [ext_resource type="Script" uid="uid://by5ppygkgmbl4" path="res://scripts/sky/world_environment.gd" id="3_2lf6f"]
 [ext_resource type="Texture2D" uid="uid://xkfjdwhex18c" path="res://textures/concrete.jpg" id="3_i7141"]
@@ -20,6 +22,15 @@
 [ext_resource type="PackedScene" uid="uid://cjdvej4n8g00i" path="res://imports/cabinet2/cabinet.tscn" id="12_q5onr"]
 [ext_resource type="PackedScene" uid="uid://c151fx7xjxi3k" path="res://imports/terrain/TERRAIN2.tscn" id="16_dss4m"]
 [ext_resource type="PackedScene" uid="uid://cq2gfytx2i12e" path="res://imports/terrain/TERRAIN3.tscn" id="17_7t5mc"]
+
+[sub_resource type="Resource" id="Resource_ctatt"]
+script = ExtResource("2_kpybi")
+seconds = 0
+minutes = 0
+hours = 6
+days = 27
+years = 2492
+metadata/_custom_type_script = "uid://cpqh2tucvqh4r"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3sb7"]
 sky_top_color = Color(0.25098, 0.470588, 0.952941, 1)
@@ -102,6 +113,12 @@ albedo_color = Color(1, 0, 0, 1)
 
 [node name="world" type="Node3D"]
 
+[node name="TimeSystem" type="Node" parent="."]
+script = ExtResource("1_oo54l")
+date_time = SubResource("Resource_ctatt")
+ticks_per_second = 10
+metadata/_custom_type_script = "uid://ditpaf5ylw1qw"
+
 [node name="world lighting" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 142.717, 0)
 
@@ -109,11 +126,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 142.717, 0)
 environment = SubResource("Environment_tlwt5")
 script = ExtResource("3_2lf6f")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="world lighting"]
+[node name="Sun" type="DirectionalLight3D" parent="world lighting"]
 transform = Transform3D(-0.475409, -0.695518, -0.538741, 0.856909, -0.504758, -0.104528, -0.199232, -0.511346, 0.835962, 1.29396, 5.92958, 8.59867)
 light_color = Color(1, 0.470588, 0, 1)
-light_angular_distance = 0.5
+light_angular_distance = 0.1
 shadow_enabled = true
+shadow_opacity = 0.89
+shadow_blur = 3.871
+directional_shadow_blend_splits = true
 script = ExtResource("1_pm21f")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="world lighting"]

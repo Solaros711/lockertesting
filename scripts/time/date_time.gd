@@ -21,7 +21,7 @@ var vis_season: String = ""
 
 var delta_time: float = 0
 var leap_year: bool = false
-var cur_time: int = 0
+var daytime: bool = false
 
 #increases seconds based ticks that have passed.
 func increase_by_sec(delta_seconds: float) -> void:
@@ -80,10 +80,13 @@ func increase_by_sec(delta_seconds: float) -> void:
 	seconds = seconds % 60
 	minutes = minutes % 60
 	hours = hours % 24
-	if cur_time != hours:
-		cur_time = hours
-		print(cur_time)
-	print_date()
+	
+	if hours >= 6 or hours <= 18:
+		daytime = true
+	else:
+		daytime = false
+	
+	#print_date()
 
 #Handles assigning a visable season based on the month.
 func handle_season(month: int):

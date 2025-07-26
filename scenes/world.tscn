@@ -27,14 +27,14 @@
 script = ExtResource("2_kpybi")
 seconds = 0
 minutes = 0
-hours = 0
+hours = 6
 days = 27
 years = 2492
 metadata/_custom_type_script = "uid://cpqh2tucvqh4r"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3sb7"]
-sky_top_color = Color(0.25098, 0.470588, 0.952941, 1)
-sky_horizon_color = Color(0.768627, 0.776471, 0.788235, 1)
+sky_top_color = Color(0.0733829, 0.147423, 0.441794, 1)
+sky_horizon_color = Color(0.121569, 0.137255, 0.121569, 1)
 ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 
 [sub_resource type="Sky" id="Sky_fj7yv"]
@@ -113,10 +113,11 @@ albedo_color = Color(1, 0, 0, 1)
 
 [node name="world" type="Node3D"]
 
-[node name="TimeSystem" type="Node" parent="." node_paths=PackedStringArray("sun")]
+[node name="TimeSystem" type="Node" parent="." node_paths=PackedStringArray("sun", "sky")]
 script = ExtResource("1_oo54l")
 date_time = SubResource("Resource_ctatt")
 sun = NodePath("../world lighting/Sun")
+sky = NodePath("../world lighting/WorldEnvironment")
 ticks_per_second = 30
 metadata/_custom_type_script = "uid://ditpaf5ylw1qw"
 

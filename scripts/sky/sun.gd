@@ -12,7 +12,7 @@ func _ready() -> void:
 
 #rotates the sun on the x axis, changing the color based on where it is on the horizon
 func do_sun_move(time: DateTime):
-	if(rotation.x > 0.10472):
+	if(time.hours <= 5 || time.hours >= 22):
 		rotate_x(SUN_ROTATE)
 		light_energy = 0.0
 		#Resets angle of the sun so the inaccuracy doesn't break days later in time.

@@ -145,15 +145,16 @@ size = Vector3(0.297852, 0.322266, 0.333496)
 [node name="OmniLight3D" type="OmniLight3D" parent="world lighting/CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0432158, 0.0116832, -0.0283546)
 light_color = Color(1, 0.760784, 0, 1)
-light_energy = 3.009
+light_energy = 3.366
 shadow_enabled = true
 
 [node name="TERRAIN2" parent="world lighting/CSGBox3D" instance=ExtResource("16_dss4m")]
 transform = Transform3D(-0.99997, 0, -0.00774915, 0, 1, 0, 0.00774915, 0, -0.99997, -33.7822, -1.68945, -13.4502)
 
-[node name="player" type="CharacterBody3D" parent="."]
+[node name="player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("flashlight")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9533, 143.449, 90.1723)
 script = ExtResource("1_71j4m")
+flashlight = NodePath("head/Camera3D/Flashlight")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="player"]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
@@ -171,6 +172,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462799, 0)
 [node name="RayCast3D" type="RayCast3D" parent="player/head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.274963)
 script = ExtResource("2_e3hyu")
+
+[node name="Flashlight" type="SpotLight3D" parent="player/head/Camera3D"]
+shadow_enabled = true
+spot_range = 0.0
+spot_angle = 34.95
 
 [node name="platforms" type="Node3D" parent="."]
 transform = Transform3D(1, 0.000758074, -0.000195153, -0.000758125, 1, -0.000245154, 0.000194955, 0.000245311, 1, 10.459, 142.717, 61.8386)

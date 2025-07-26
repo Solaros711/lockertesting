@@ -6,6 +6,10 @@ const JUMP_VELOCITY = 4.5
 
 var gravity = 9.81
 
+@export var flashlight: SpotLight3D
+var fl_toggle: bool = false
+
+
 @onready var head = $head
 @onready var camera = $head/Camera3D
 @onready var cursor_pos = camera.get_viewport().get_mouse_position()
@@ -30,6 +34,13 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		
+	if Input.is_action_just_pressed("flashlight"):
+		fl_toggle = !fl_toggle
+		if fl_toggle:
+			flashlight.spot_range = 5.0
+		else:
+			flashlight.spot_range = 0.0
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

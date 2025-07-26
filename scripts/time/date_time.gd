@@ -86,7 +86,7 @@ func increase_by_sec(delta_seconds: float) -> void:
 	else:
 		daytime = false
 	
-	#print_date()
+	print_date()
 
 #Handles assigning a visable season based on the month.
 func handle_season(month: int):

@@ -6,6 +6,7 @@ const END_OF_YEAR: int = 11
 @export_range(0,23) var hours = 0
 @export_range(0,366) var days = 0
 var vis_day: int = 0
+
 var vis_month: int = 0
 var month_names: Array = ["January", "February", "March", 
 							 "April", "May", "June", "July", 
@@ -15,13 +16,17 @@ var days_month: Array = [31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365
 var vis_days_month: Array = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 var days_month_leap: Array = [31, 60, 91, 121, 151, 181, 213, 244, 274, 305, 335, 366]
 var vis_days_month_leap: Array = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
 var seasons: Array = ["Winter", "Spring", "Summer", "Fall"]
 var vis_season: String = ""
+
 @export var years = 0
 
 var delta_time: float = 0
 var leap_year: bool = false
 var daytime: bool = false
+
+var realtime: int = 0
 
 #increases seconds based ticks that have passed.
 func increase_by_sec(delta_seconds: float) -> void:
@@ -87,6 +92,12 @@ func increase_by_sec(delta_seconds: float) -> void:
 		daytime = false
 	
 	print_date()
+
+func has_time_passed(time: DateTime):
+	if time.realtime < realtime:
+		return true
+	else:
+		return false
 
 #Handles assigning a visable season based on the month.
 func handle_season(month: int):

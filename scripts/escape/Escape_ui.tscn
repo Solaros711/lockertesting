@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://rgim5p5r04jl"]
+
+[ext_resource type="Script" uid="uid://cq3vkp2dbb6s0" path="res://scripts/escape/escape_ui.gd" id="1_7aek4"]
+
+[node name="Escape_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7aek4")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_right = 118.0
+offset_bottom = 41.0
+text = "ESCAPE MENU"
+placeholder_text = "ESCAPE MENU"

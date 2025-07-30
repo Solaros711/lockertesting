@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://c17fm0aekfsvg"]
+[gd_scene load_steps=42 format=3 uid="uid://c17fm0aekfsvg"]
 
 [ext_resource type="Script" uid="uid://c1b455a5ckggl" path="res://scripts/player/player.gd" id="1_71j4m"]
 [ext_resource type="Script" uid="uid://ditpaf5ylw1qw" path="res://scripts/time/time_system.gd" id="1_oo54l"]
@@ -13,9 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://dxrox780f8er4" path="res://imports/oven/Oven.tscn" id="4_dss4m"]
 [ext_resource type="Texture2D" uid="uid://uqgprfow2855" path="res://textures/wood.jpg" id="5_7r4gi"]
 [ext_resource type="Texture2D" uid="uid://3ok0l6vsdfep" path="res://textures/palmleaf.png" id="6_jhx03"]
+[ext_resource type="Resource" uid="uid://uhbyiyn5jcq5" path="res://scripts/inventory/player_inventory.tres" id="7_kpybi"]
 [ext_resource type="PackedScene" uid="uid://35y81inm0lf3" path="res://imports/scaled towers/stacked scaled layersx16col.gltf" id="8_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://qc7sh82kkh63" path="res://imports/terrain/bridge2.gltf" id="8_lakw3"]
+[ext_resource type="PackedScene" uid="uid://qhtmivp1lyqa" path="res://scripts/inventory/Inventory_ui.tscn" id="9_ctatt"]
 [ext_resource type="PackedScene" uid="uid://bj8mgm514a5vj" path="res://imports/character test/charactertest.gltf" id="10_w7kh3"]
+[ext_resource type="PackedScene" uid="uid://rgim5p5r04jl" path="res://scripts/escape/Escape_ui.tscn" id="10_xgqkh"]
 [ext_resource type="PackedScene" uid="uid://csylkj73mu55m" path="res://imports/rv/rv test6.tscn" id="11_q5onr"]
 [ext_resource type="PackedScene" uid="uid://bctypghj2kq7i" path="res://imports/character test/characterrobot.gltf" id="12_jhx03"]
 [ext_resource type="PackedScene" uid="uid://by57tu60svkye" path="res://imports/truck/truckfixed.tscn" id="12_o8fc1"]
@@ -160,6 +163,7 @@ shadow_normal_bias = 10.0
 [node name="player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("flashlight")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9533, 143.449, 90.1723)
 script = ExtResource("1_71j4m")
+inventory = ExtResource("7_kpybi")
 flashlight = NodePath("head/Camera3D/Flashlight")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="player"]
@@ -184,6 +188,10 @@ shadow_enabled = true
 shadow_normal_bias = 10.0
 spot_range = 0.0
 spot_angle = 34.95
+
+[node name="Inventory_UI" parent="player" instance=ExtResource("9_ctatt")]
+
+[node name="Escape_ui" parent="player" instance=ExtResource("10_xgqkh")]
 
 [node name="platforms" type="Node3D" parent="."]
 transform = Transform3D(1, 0.000758074, -0.000195153, -0.000758125, 1, -0.000245154, 0.000194955, 0.000245311, 1, 10.459, 142.717, 61.8386)

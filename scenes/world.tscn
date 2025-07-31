@@ -1,9 +1,7 @@
-[gd_scene load_steps=42 format=3 uid="uid://c17fm0aekfsvg"]
+[gd_scene load_steps=38 format=3 uid="uid://c17fm0aekfsvg"]
 
-[ext_resource type="Script" uid="uid://c1b455a5ckggl" path="res://scripts/player/player.gd" id="1_71j4m"]
 [ext_resource type="Script" uid="uid://ditpaf5ylw1qw" path="res://scripts/time/time_system.gd" id="1_oo54l"]
 [ext_resource type="Script" uid="uid://c55oadc3idcc5" path="res://scripts/sky/sun.gd" id="1_pm21f"]
-[ext_resource type="Script" uid="uid://b5r8dgivwddrd" path="res://scripts/player/player_rayCast.gd" id="2_e3hyu"]
 [ext_resource type="Script" uid="uid://cpqh2tucvqh4r" path="res://scripts/time/date_time.gd" id="2_kpybi"]
 [ext_resource type="Texture2D" uid="uid://bwdyfo7ddvird" path="res://textures/surfaces/grass.jpg" id="2_qfnet"]
 [ext_resource type="Script" uid="uid://by5ppygkgmbl4" path="res://scripts/sky/world_environment.gd" id="3_2lf6f"]
@@ -13,18 +11,18 @@
 [ext_resource type="PackedScene" uid="uid://dxrox780f8er4" path="res://imports/oven/Oven.tscn" id="4_dss4m"]
 [ext_resource type="Texture2D" uid="uid://uqgprfow2855" path="res://textures/surfaces/wood.jpg" id="5_7r4gi"]
 [ext_resource type="Texture2D" uid="uid://3ok0l6vsdfep" path="res://textures/surfaces/palmleaf.png" id="6_jhx03"]
-[ext_resource type="Resource" uid="uid://uhbyiyn5jcq5" path="res://scripts/inventory/player_inventory.tres" id="7_kpybi"]
+[ext_resource type="PackedScene" uid="uid://c00yks1lmbsfc" path="res://scenes/player/player.tscn" id="6_kpybi"]
 [ext_resource type="PackedScene" uid="uid://35y81inm0lf3" path="res://imports/scaled towers/stacked scaled layersx16col.gltf" id="8_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://qc7sh82kkh63" path="res://imports/terrain/bridge2.gltf" id="8_lakw3"]
-[ext_resource type="PackedScene" uid="uid://qhtmivp1lyqa" path="res://scenes/menuing/inventory/Inventory_ui.tscn" id="9_ctatt"]
 [ext_resource type="PackedScene" uid="uid://bj8mgm514a5vj" path="res://imports/character test/charactertest.gltf" id="10_w7kh3"]
-[ext_resource type="PackedScene" uid="uid://rgim5p5r04jl" path="res://scenes/menuing/escape/Escape_ui.tscn" id="10_xgqkh"]
 [ext_resource type="PackedScene" uid="uid://csylkj73mu55m" path="res://imports/rv/rv test6.tscn" id="11_q5onr"]
 [ext_resource type="PackedScene" uid="uid://bctypghj2kq7i" path="res://imports/character test/characterrobot.gltf" id="12_jhx03"]
 [ext_resource type="PackedScene" uid="uid://by57tu60svkye" path="res://imports/truck/truckfixed.tscn" id="12_o8fc1"]
 [ext_resource type="PackedScene" uid="uid://cjdvej4n8g00i" path="res://imports/cabinet2/cabinet.tscn" id="12_q5onr"]
 [ext_resource type="PackedScene" uid="uid://c151fx7xjxi3k" path="res://imports/terrain/TERRAIN2.tscn" id="16_dss4m"]
 [ext_resource type="PackedScene" uid="uid://cq2gfytx2i12e" path="res://imports/terrain/TERRAIN3.tscn" id="17_7t5mc"]
+[ext_resource type="PackedScene" uid="uid://drc0s07gpds48" path="res://imports/items/tomato/tomato.tscn" id="22_ctatt"]
+[ext_resource type="Script" uid="uid://bj6x61vcf7b1i" path="res://imports/items/tomato/tomato.gd" id="23_xgqkh"]
 
 [sub_resource type="Resource" id="Resource_ctatt"]
 script = ExtResource("2_kpybi")
@@ -67,11 +65,6 @@ volumetric_fog_enabled = true
 volumetric_fog_anisotropy = 0.6
 volumetric_fog_length = 4.0
 volumetric_fog_sky_affect = 0.0
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_fj7yv"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tlwt5"]
-points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607, 0.498884, 0.169713, 0.559144, 0.464172, 0.231051, -0.803591, 0.320455, 0.40741, 0.651043, -0.243523, -0.482789, 0.594843, 0.0822132, -0.362868, -0.682312, 0.289697, 0.469044, -0.654529, -0.0662713, -0.127444, 0.842701, -0.338103, -0.393435, -0.683942, -0.244717, 0.438255, 0.623309, 0.200849, 0.0841477, 0.977454, 0.114795, -0.0682023, -0.976458, -0.12927, 0.20055, -0.563129, -0.451454, -0.185527, 0.595453, -0.453475, -0.273363, 0.592268, 0.407754, -0.00693649, -0.476823, 0.49966, 0.375821, -0.588614, 0.316955, 0.111579, 0.563059, -0.481177, -0.41725, 0.527866, -0.270497, -0.484546, -0.596972, -0.0665097, -0.279747, 0.908561, 0.0533361, -0.250197, -0.880712, 0.205319, 0.263647, -0.902771, -0.127394, 0.293368, 0.871526, -0.157196, 0.373412, -0.526319, -0.328246, 0.499663, 0.476641, -0.00688856, 0.0531056, 0.875001, 0.324703, -0.154543, -0.590854, 0.465879, -0.0972799, -0.782358, -0.398188, -0.387649, -0.498171, 0.31565, -0.30068, -0.587995, -0.388901)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7kh3"]
 albedo_texture = ExtResource("3_i7141")
@@ -160,39 +153,8 @@ visible = false
 shadow_enabled = true
 shadow_normal_bias = 10.0
 
-[node name="player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("flashlight")]
+[node name="player" parent="." instance=ExtResource("6_kpybi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9533, 143.449, 90.1723)
-script = ExtResource("1_71j4m")
-inventory = ExtResource("7_kpybi")
-flashlight = NodePath("head/Camera3D/Flashlight")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="player"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_fj7yv")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_tlwt5")
-
-[node name="head" type="Node3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462799, 0)
-
-[node name="Camera3D" type="Camera3D" parent="player/head"]
-
-[node name="RayCast3D" type="RayCast3D" parent="player/head/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.274963)
-script = ExtResource("2_e3hyu")
-
-[node name="Flashlight" type="SpotLight3D" parent="player/head/Camera3D"]
-shadow_enabled = true
-shadow_normal_bias = 10.0
-spot_range = 0.0
-spot_angle = 34.95
-
-[node name="Inventory_UI" parent="player" instance=ExtResource("9_ctatt")]
-anchors_preset = 15
-
-[node name="Escape_ui" parent="player" instance=ExtResource("10_xgqkh")]
 
 [node name="platforms" type="Node3D" parent="."]
 transform = Transform3D(1, 0.000758074, -0.000195153, -0.000758125, 1, -0.000245154, 0.000194955, 0.000245311, 1, 10.459, 142.717, 61.8386)
@@ -303,3 +265,7 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 13.7706, 142.218, 65.56
 
 [node name="TERRAIN3" parent="." instance=ExtResource("17_7t5mc")]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+
+[node name="tomato" parent="." instance=ExtResource("22_ctatt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.55928, 142.907, 75.0254)
+script = ExtResource("23_xgqkh")

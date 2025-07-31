@@ -13,7 +13,9 @@ script = ExtResource("1_7aek4")
 
 [node name="TextEdit" type="TextEdit" parent="."]
 layout_mode = 0
-offset_right = 118.0
-offset_bottom = 41.0
+offset_left = 488.0
+offset_top = 294.0
+offset_right = 606.0
+offset_bottom = 335.0
 text = "ESCAPE MENU"
 placeholder_text = "ESCAPE MENU"

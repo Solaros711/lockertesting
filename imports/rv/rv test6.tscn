@@ -1,15 +1,15 @@
 [gd_scene load_steps=123 format=4 uid="uid://csylkj73mu55m"]
 
-[ext_resource type="Texture2D" uid="uid://b8yy7y2348t7u" path="res://textures/rubber.jpg" id="1_5dsie"]
+[ext_resource type="Texture2D" uid="uid://b8yy7y2348t7u" path="res://textures/surfaces/rubber.jpg" id="1_5dsie"]
 [ext_resource type="Script" uid="uid://bos1mtotlxa7h" path="res://imports/rv/dooropen.gd" id="1_vr7om"]
-[ext_resource type="Texture2D" uid="uid://df64qfmhj7jcq" path="res://textures/irongrate.jpg" id="2_ifkgy"]
+[ext_resource type="Texture2D" uid="uid://df64qfmhj7jcq" path="res://textures/surfaces/irongrate.jpg" id="2_ifkgy"]
 [ext_resource type="Script" uid="uid://bcl7e0pka8vyl" path="res://imports/rv/cab_topdoor.gd" id="2_qylpd"]
 [ext_resource type="Script" uid="uid://81vyi5yot35b" path="res://imports/rv/cab_botdoor.gd" id="2_sopk0"]
-[ext_resource type="Texture2D" uid="uid://bmvgsimyuc3mu" path="res://textures/redpaint.jpg" id="3_058tg"]
-[ext_resource type="Texture2D" uid="uid://bf053kuob4epu" path="res://textures/steel.jpeg" id="4_87bu7"]
-[ext_resource type="Texture2D" uid="uid://uqgprfow2855" path="res://textures/wood.jpg" id="5_6yhmo"]
-[ext_resource type="Texture2D" uid="uid://xkfjdwhex18c" path="res://textures/concrete.jpg" id="7_miif2"]
-[ext_resource type="Texture2D" uid="uid://bwdyfo7ddvird" path="res://textures/grass.jpg" id="8_8twna"]
+[ext_resource type="Texture2D" uid="uid://bmvgsimyuc3mu" path="res://textures/surfaces/redpaint.jpg" id="3_058tg"]
+[ext_resource type="Texture2D" uid="uid://bf053kuob4epu" path="res://textures/surfaces/steel.jpeg" id="4_87bu7"]
+[ext_resource type="Texture2D" uid="uid://uqgprfow2855" path="res://textures/surfaces/wood.jpg" id="5_6yhmo"]
+[ext_resource type="Texture2D" uid="uid://xkfjdwhex18c" path="res://textures/surfaces/concrete.jpg" id="7_miif2"]
+[ext_resource type="Texture2D" uid="uid://bwdyfo7ddvird" path="res://textures/surfaces/grass.jpg" id="8_8twna"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jd14r"]
 albedo_texture = ExtResource("1_5dsie")

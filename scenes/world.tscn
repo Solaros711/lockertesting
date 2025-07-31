@@ -5,20 +5,20 @@
 [ext_resource type="Script" uid="uid://c55oadc3idcc5" path="res://scripts/sky/sun.gd" id="1_pm21f"]
 [ext_resource type="Script" uid="uid://b5r8dgivwddrd" path="res://scripts/player/player_rayCast.gd" id="2_e3hyu"]
 [ext_resource type="Script" uid="uid://cpqh2tucvqh4r" path="res://scripts/time/date_time.gd" id="2_kpybi"]
-[ext_resource type="Texture2D" uid="uid://bwdyfo7ddvird" path="res://textures/grass.jpg" id="2_qfnet"]
+[ext_resource type="Texture2D" uid="uid://bwdyfo7ddvird" path="res://textures/surfaces/grass.jpg" id="2_qfnet"]
 [ext_resource type="Script" uid="uid://by5ppygkgmbl4" path="res://scripts/sky/world_environment.gd" id="3_2lf6f"]
-[ext_resource type="Texture2D" uid="uid://xkfjdwhex18c" path="res://textures/concrete.jpg" id="3_i7141"]
+[ext_resource type="Texture2D" uid="uid://xkfjdwhex18c" path="res://textures/surfaces/concrete.jpg" id="3_i7141"]
 [ext_resource type="PackedScene" uid="uid://eblxebeslqey" path="res://imports/oven/Oven.gltf" id="3_xo05s"]
-[ext_resource type="Texture2D" uid="uid://clsh53qwfapdh" path="res://textures/cobblestone.jpg" id="4_4mrxx"]
+[ext_resource type="Texture2D" uid="uid://clsh53qwfapdh" path="res://textures/surfaces/cobblestone.jpg" id="4_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://dxrox780f8er4" path="res://imports/oven/Oven.tscn" id="4_dss4m"]
-[ext_resource type="Texture2D" uid="uid://uqgprfow2855" path="res://textures/wood.jpg" id="5_7r4gi"]
-[ext_resource type="Texture2D" uid="uid://3ok0l6vsdfep" path="res://textures/palmleaf.png" id="6_jhx03"]
+[ext_resource type="Texture2D" uid="uid://uqgprfow2855" path="res://textures/surfaces/wood.jpg" id="5_7r4gi"]
+[ext_resource type="Texture2D" uid="uid://3ok0l6vsdfep" path="res://textures/surfaces/palmleaf.png" id="6_jhx03"]
 [ext_resource type="Resource" uid="uid://uhbyiyn5jcq5" path="res://scripts/inventory/player_inventory.tres" id="7_kpybi"]
 [ext_resource type="PackedScene" uid="uid://35y81inm0lf3" path="res://imports/scaled towers/stacked scaled layersx16col.gltf" id="8_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://qc7sh82kkh63" path="res://imports/terrain/bridge2.gltf" id="8_lakw3"]
-[ext_resource type="PackedScene" uid="uid://qhtmivp1lyqa" path="res://scripts/inventory/Inventory_ui.tscn" id="9_ctatt"]
+[ext_resource type="PackedScene" uid="uid://qhtmivp1lyqa" path="res://scenes/menuing/inventory/Inventory_ui.tscn" id="9_ctatt"]
 [ext_resource type="PackedScene" uid="uid://bj8mgm514a5vj" path="res://imports/character test/charactertest.gltf" id="10_w7kh3"]
-[ext_resource type="PackedScene" uid="uid://rgim5p5r04jl" path="res://scripts/escape/Escape_ui.tscn" id="10_xgqkh"]
+[ext_resource type="PackedScene" uid="uid://rgim5p5r04jl" path="res://scenes/menuing/escape/Escape_ui.tscn" id="10_xgqkh"]
 [ext_resource type="PackedScene" uid="uid://csylkj73mu55m" path="res://imports/rv/rv test6.tscn" id="11_q5onr"]
 [ext_resource type="PackedScene" uid="uid://bctypghj2kq7i" path="res://imports/character test/characterrobot.gltf" id="12_jhx03"]
 [ext_resource type="PackedScene" uid="uid://by57tu60svkye" path="res://imports/truck/truckfixed.tscn" id="12_o8fc1"]
@@ -190,6 +190,7 @@ spot_range = 0.0
 spot_angle = 34.95
 
 [node name="Inventory_UI" parent="player" instance=ExtResource("9_ctatt")]
+anchors_preset = 15
 
 [node name="Escape_ui" parent="player" instance=ExtResource("10_xgqkh")]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df64qfmhj7jcq"
-path="res://.godot/imported/irongrate.jpg-726732f13418cd3c2291c44ca75de2af.ctex"
+uid="uid://bmvgsimyuc3mu"
+path="res://.godot/imported/redpaint.jpg-926451ee3bdeb7950e86aa702263cbaa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/irongrate.jpg"
-dest_files=["res://.godot/imported/irongrate.jpg-726732f13418cd3c2291c44ca75de2af.ctex"]
+source_file="res://textures/surfaces/redpaint.jpg"
+dest_files=["res://.godot/imported/redpaint.jpg-926451ee3bdeb7950e86aa702263cbaa.ctex"]
 
 [params]
 

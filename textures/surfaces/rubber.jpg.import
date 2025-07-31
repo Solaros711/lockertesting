@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3ok0l6vsdfep"
-path="res://.godot/imported/palmleaf.png-c5c3b340576c64058fd9b3c21a4bca0e.ctex"
+uid="uid://b8yy7y2348t7u"
+path="res://.godot/imported/rubber.jpg-83d788e74c9cdc6f5db7fe9a3c0ab556.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/palmleaf.png"
-dest_files=["res://.godot/imported/palmleaf.png-c5c3b340576c64058fd9b3c21a4bca0e.ctex"]
+source_file="res://textures/surfaces/rubber.jpg"
+dest_files=["res://.godot/imported/rubber.jpg-83d788e74c9cdc6f5db7fe9a3c0ab556.ctex"]
 
 [params]
 

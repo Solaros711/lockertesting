@@ -30,10 +30,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462799, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 
-[node name="RayCast3D" type="RayCast3D" parent="head/Camera3D" node_paths=PackedStringArray("hover_text")]
+[node name="RayCast3D" type="RayCast3D" parent="head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.274963)
 script = ExtResource("3_0owmy")
-hover_text = NodePath("../../../Object_Info")
 
 [node name="Flashlight" type="SpotLight3D" parent="head/Camera3D"]
 shadow_enabled = true

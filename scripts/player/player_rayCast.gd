@@ -1,7 +1,5 @@
 extends RayCast3D
 
-@export var hover_text: Control
-
 var vision: String = ""
 var see: bool = false
 
@@ -14,9 +12,6 @@ func _process(delta: float) -> void:
 			hitObj.pickup()
 		if hitObj.has_method("raycast_see"):
 			vision = hitObj.raycast_see()
-			if vision != "":
-				print(vision)
 	else:
 		vision = ""
-		print("changing text back to blank")
 		see = false

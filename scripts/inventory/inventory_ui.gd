@@ -18,6 +18,9 @@ func _process(delta: float) -> void:
 			close()
 		else:
 			open()
+	if Input.is_action_just_pressed("escape_menu"):
+		if is_open:
+			close()
 
 func open():
 	visible = true

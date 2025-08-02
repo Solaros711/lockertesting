@@ -40,7 +40,10 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	if Input.is_action_just_pressed("escape_menu"):
-		open_esc = !open_esc
+		if open_menu:
+			open_menu = !open_menu
+		else:
+			open_esc = !open_esc
 	if Input.is_action_just_pressed("inventory"):
 		open_menu = !open_menu
 	if open_menu != true && open_esc != true:

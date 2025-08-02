@@ -1,16 +1,22 @@
 extends Control
 
 var is_open: bool = false
+var is_menu_open: bool = false
 
 func _ready():
 	close()
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("escape_menu"):
-		if is_open:
-			close()
+		if is_menu_open:
+			is_menu_open = !is_menu_open
 		else:
-			open()
+			if is_open:
+				close()
+			else:
+				open()
+	if Input.is_action_just_pressed("inventory"):
+		is_menu_open = !is_menu_open
 
 func open():
 	visible = true

@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://drc0s07gpds48"]
+[gd_scene load_steps=10 format=4 uid="uid://drc0s07gpds48"]
 
 [ext_resource type="Texture2D" uid="uid://3a7y3cmagou7" path="res://imports/items/tomato/tomato_0.png" id="1_1w2ia"]
+[ext_resource type="Script" uid="uid://bqy2p7w3pyi7o" path="res://imports/items/tomato/tomato3ditem.gd" id="2_b5sn4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctwyg"]
 resource_name = "material_0"
@@ -92,6 +93,7 @@ mesh = SubResource("ArrayMesh_7p2qi")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node/sphere"]
+script = ExtResource("2_b5sn4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node/sphere/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_wiad8")

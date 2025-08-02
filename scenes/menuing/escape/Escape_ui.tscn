@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cq3vkp2dbb6s0" path="res://scripts/escape/escape_ui.gd" id="1_7aek4"]
 
-[node name="Escape_ui" type="Control"]
+[node name="Escape_UI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

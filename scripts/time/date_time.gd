@@ -91,7 +91,7 @@ func increase_by_sec(delta_seconds: float) -> void:
 	else:
 		daytime = false
 	
-	print_date()
+	#print_date()
 
 func has_time_passed(time: DateTime):
 	if time.realtime < realtime:

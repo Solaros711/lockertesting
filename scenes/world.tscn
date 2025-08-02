@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://c17fm0aekfsvg"]
+[gd_scene load_steps=37 format=3 uid="uid://c17fm0aekfsvg"]
 
 [ext_resource type="Script" uid="uid://ditpaf5ylw1qw" path="res://scripts/time/time_system.gd" id="1_oo54l"]
 [ext_resource type="Script" uid="uid://c55oadc3idcc5" path="res://scripts/sky/sun.gd" id="1_pm21f"]
@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://c151fx7xjxi3k" path="res://imports/terrain/TERRAIN2.tscn" id="16_dss4m"]
 [ext_resource type="PackedScene" uid="uid://cq2gfytx2i12e" path="res://imports/terrain/TERRAIN3.tscn" id="17_7t5mc"]
 [ext_resource type="PackedScene" uid="uid://drc0s07gpds48" path="res://imports/items/tomato/tomato.tscn" id="22_ctatt"]
-[ext_resource type="Script" uid="uid://bj6x61vcf7b1i" path="res://imports/items/tomato/tomato.gd" id="23_xgqkh"]
 
 [sub_resource type="Resource" id="Resource_ctatt"]
 script = ExtResource("2_kpybi")
@@ -267,5 +266,4 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 13.7706, 142.218, 65.56
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
 
 [node name="tomato" parent="." instance=ExtResource("22_ctatt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.55928, 142.907, 75.0254)
-script = ExtResource("23_xgqkh")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4686, 143.341, 80.4679)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c00yks1lmbsfc"]
+[gd_scene load_steps=9 format=3 uid="uid://c00yks1lmbsfc"]
 
 [ext_resource type="Script" uid="uid://c1b455a5ckggl" path="res://scripts/player/player.gd" id="1_p47bc"]
 [ext_resource type="Resource" uid="uid://uhbyiyn5jcq5" path="res://scripts/inventory/player_inventory.tres" id="2_75vfm"]
 [ext_resource type="Script" uid="uid://b5r8dgivwddrd" path="res://scripts/player/player_rayCast.gd" id="3_0owmy"]
 [ext_resource type="PackedScene" uid="uid://qhtmivp1lyqa" path="res://scenes/menuing/inventory/Inventory_ui.tscn" id="4_qek5x"]
 [ext_resource type="PackedScene" uid="uid://rgim5p5r04jl" path="res://scenes/menuing/escape/Escape_ui.tscn" id="5_5gtgg"]
+[ext_resource type="PackedScene" uid="uid://l3xsvn65abpd" path="res://scenes/menuing/object_info.tscn" id="6_75vfm"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fj7yv"]
 
@@ -29,9 +30,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462799, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 
-[node name="RayCast3D" type="RayCast3D" parent="head/Camera3D"]
+[node name="RayCast3D" type="RayCast3D" parent="head/Camera3D" node_paths=PackedStringArray("hover_text")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.274963)
 script = ExtResource("3_0owmy")
+hover_text = NodePath("../../../Object_Info")
 
 [node name="Flashlight" type="SpotLight3D" parent="head/Camera3D"]
 shadow_enabled = true
@@ -42,5 +44,8 @@ spot_angle = 34.95
 [node name="Inventory_UI" parent="." instance=ExtResource("4_qek5x")]
 metadata/_edit_use_anchors_ = true
 
-[node name="Escape_ui" parent="." instance=ExtResource("5_5gtgg")]
+[node name="Escape_UI" parent="." instance=ExtResource("5_5gtgg")]
 metadata/_edit_use_anchors_ = true
+
+[node name="Object_Info" parent="." node_paths=PackedStringArray("ray") instance=ExtResource("6_75vfm")]
+ray = NodePath("../head/Camera3D/RayCast3D")

@@ -21,7 +21,7 @@ func _ready():
 	Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
 
 
-func _unhandled_input(event: InputEvent):
+func _input(event: InputEvent):
 	if open_menu == false && open_esc == false:
 		#Hides the mouse while in FPS mode
 		Input.mouse_mode=Input.MOUSE_MODE_CAPTURED

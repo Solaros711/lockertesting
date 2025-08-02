@@ -1,30 +1,31 @@
-[gd_scene load_steps=37 format=3 uid="uid://c17fm0aekfsvg"]
+[gd_scene load_steps=38 format=3 uid="uid://c17fm0aekfsvg"]
 
-[ext_resource type="Script" uid="uid://ditpaf5ylw1qw" path="res://scripts/time/time_system.gd" id="1_oo54l"]
-[ext_resource type="Script" uid="uid://c55oadc3idcc5" path="res://scripts/sky/sun.gd" id="1_pm21f"]
-[ext_resource type="Script" uid="uid://cpqh2tucvqh4r" path="res://scripts/time/date_time.gd" id="2_kpybi"]
-[ext_resource type="Texture2D" uid="uid://bwdyfo7ddvird" path="res://textures/surfaces/grass.jpg" id="2_qfnet"]
-[ext_resource type="Script" uid="uid://by5ppygkgmbl4" path="res://scripts/sky/world_environment.gd" id="3_2lf6f"]
-[ext_resource type="Texture2D" uid="uid://xkfjdwhex18c" path="res://textures/surfaces/concrete.jpg" id="3_i7141"]
-[ext_resource type="PackedScene" uid="uid://eblxebeslqey" path="res://imports/oven/Oven.gltf" id="3_xo05s"]
-[ext_resource type="Texture2D" uid="uid://clsh53qwfapdh" path="res://textures/surfaces/cobblestone.jpg" id="4_4mrxx"]
-[ext_resource type="PackedScene" uid="uid://dxrox780f8er4" path="res://imports/oven/Oven.tscn" id="4_dss4m"]
-[ext_resource type="Texture2D" uid="uid://uqgprfow2855" path="res://textures/surfaces/wood.jpg" id="5_7r4gi"]
-[ext_resource type="Texture2D" uid="uid://3ok0l6vsdfep" path="res://textures/surfaces/palmleaf.png" id="6_jhx03"]
-[ext_resource type="PackedScene" uid="uid://c00yks1lmbsfc" path="res://scenes/player/player.tscn" id="6_kpybi"]
-[ext_resource type="PackedScene" uid="uid://35y81inm0lf3" path="res://imports/scaled towers/stacked scaled layersx16col.gltf" id="8_4mrxx"]
-[ext_resource type="PackedScene" uid="uid://qc7sh82kkh63" path="res://imports/terrain/bridge2.gltf" id="8_lakw3"]
-[ext_resource type="PackedScene" uid="uid://bj8mgm514a5vj" path="res://imports/character test/charactertest.gltf" id="10_w7kh3"]
-[ext_resource type="PackedScene" uid="uid://csylkj73mu55m" path="res://imports/rv/rv test6.tscn" id="11_q5onr"]
-[ext_resource type="PackedScene" uid="uid://bctypghj2kq7i" path="res://imports/character test/characterrobot.gltf" id="12_jhx03"]
-[ext_resource type="PackedScene" uid="uid://by57tu60svkye" path="res://imports/truck/truckfixed.tscn" id="12_o8fc1"]
-[ext_resource type="PackedScene" uid="uid://cjdvej4n8g00i" path="res://imports/cabinet2/cabinet.tscn" id="12_q5onr"]
-[ext_resource type="PackedScene" uid="uid://c151fx7xjxi3k" path="res://imports/terrain/TERRAIN2.tscn" id="16_dss4m"]
-[ext_resource type="PackedScene" uid="uid://cq2gfytx2i12e" path="res://imports/terrain/TERRAIN3.tscn" id="17_7t5mc"]
-[ext_resource type="PackedScene" uid="uid://drc0s07gpds48" path="res://imports/items/tomato/tomato.tscn" id="22_ctatt"]
+[ext_resource type="Script" uid="uid://cu7dgkba51pgi" path="res://scenes/world.gd" id="1_rm3lh"]
+[ext_resource type="Script" uid="uid://ditpaf5ylw1qw" path="res://scripts/time/time_system.gd" id="2_yncth"]
+[ext_resource type="Script" uid="uid://cpqh2tucvqh4r" path="res://scripts/time/date_time.gd" id="3_jgbtq"]
+[ext_resource type="Script" uid="uid://by5ppygkgmbl4" path="res://scripts/sky/world_environment.gd" id="4_4q8dg"]
+[ext_resource type="Script" uid="uid://c55oadc3idcc5" path="res://scripts/sky/sun.gd" id="5_lawxi"]
+[ext_resource type="PackedScene" uid="uid://c151fx7xjxi3k" path="res://imports/terrain/TERRAIN2.tscn" id="6_uni40"]
+[ext_resource type="PackedScene" uid="uid://c00yks1lmbsfc" path="res://scenes/player/Player.tscn" id="7_aqlsr"]
+[ext_resource type="Texture2D" uid="uid://xkfjdwhex18c" path="res://textures/surfaces/concrete.jpg" id="8_n2fr6"]
+[ext_resource type="Texture2D" uid="uid://clsh53qwfapdh" path="res://textures/surfaces/cobblestone.jpg" id="9_128ka"]
+[ext_resource type="Texture2D" uid="uid://uqgprfow2855" path="res://textures/surfaces/wood.jpg" id="10_ngql4"]
+[ext_resource type="Texture2D" uid="uid://3ok0l6vsdfep" path="res://textures/surfaces/palmleaf.png" id="11_b64vv"]
+[ext_resource type="PackedScene" uid="uid://qc7sh82kkh63" path="res://imports/terrain/bridge2.gltf" id="12_agajo"]
+[ext_resource type="Texture2D" uid="uid://bwdyfo7ddvird" path="res://textures/surfaces/grass.jpg" id="13_2pad8"]
+[ext_resource type="PackedScene" uid="uid://eblxebeslqey" path="res://imports/oven/Oven.gltf" id="14_e4yt5"]
+[ext_resource type="PackedScene" uid="uid://dxrox780f8er4" path="res://imports/oven/Oven.tscn" id="15_x70b3"]
+[ext_resource type="PackedScene" uid="uid://35y81inm0lf3" path="res://imports/scaled towers/stacked scaled layersx16col.gltf" id="16_5w2bu"]
+[ext_resource type="PackedScene" uid="uid://bj8mgm514a5vj" path="res://imports/character test/charactertest.gltf" id="17_1bdwf"]
+[ext_resource type="PackedScene" uid="uid://bctypghj2kq7i" path="res://imports/character test/characterrobot.gltf" id="18_1w2qq"]
+[ext_resource type="PackedScene" uid="uid://csylkj73mu55m" path="res://imports/rv/rv test6.tscn" id="19_yd118"]
+[ext_resource type="PackedScene" uid="uid://cjdvej4n8g00i" path="res://imports/cabinet2/cabinet.tscn" id="20_lffjk"]
+[ext_resource type="PackedScene" uid="uid://by57tu60svkye" path="res://imports/truck/truckfixed.tscn" id="21_cgwb4"]
+[ext_resource type="PackedScene" uid="uid://cq2gfytx2i12e" path="res://imports/terrain/TERRAIN3.tscn" id="22_tx6do"]
+[ext_resource type="PackedScene" uid="uid://drc0s07gpds48" path="res://imports/items/tomato/Tomato.tscn" id="23_jot8m"]
 
 [sub_resource type="Resource" id="Resource_ctatt"]
-script = ExtResource("2_kpybi")
+script = ExtResource("3_jgbtq")
 seconds = 0
 minutes = 4
 hours = 6
@@ -66,33 +67,33 @@ volumetric_fog_length = 4.0
 volumetric_fog_sky_affect = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7kh3"]
-albedo_texture = ExtResource("3_i7141")
+albedo_texture = ExtResource("8_n2fr6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwbse"]
-albedo_texture = ExtResource("4_4mrxx")
+albedo_texture = ExtResource("9_128ka")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3hyu"]
-albedo_texture = ExtResource("3_i7141")
+albedo_texture = ExtResource("8_n2fr6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q5onr"]
-albedo_texture = ExtResource("5_7r4gi")
+albedo_texture = ExtResource("10_ngql4")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8fc1"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("6_jhx03")
+albedo_texture = ExtResource("11_b64vv")
 anisotropy = 1.0
 ao_enabled = true
 ao_light_affect = 1.0
 backlight = Color(0, 1, 1, 1)
 refraction_scale = 0.75
-refraction_texture = ExtResource("6_jhx03")
+refraction_texture = ExtResource("11_b64vv")
 proximity_fade_distance = 0.01
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3sb7"]
 albedo_color = Color(0, 1, 0, 1)
-albedo_texture = ExtResource("2_qfnet")
+albedo_texture = ExtResource("13_2pad8")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj7yv"]
 albedo_color = Color(1, 0, 1, 1)
@@ -106,10 +107,11 @@ albedo_color = Color(0.219608, 1, 1, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_036b0"]
 albedo_color = Color(1, 0, 0, 1)
 
-[node name="world" type="Node3D"]
+[node name="World" type="Node3D"]
+script = ExtResource("1_rm3lh")
 
 [node name="TimeSystem" type="Node" parent="." node_paths=PackedStringArray("sun", "sky")]
-script = ExtResource("1_oo54l")
+script = ExtResource("2_yncth")
 date_time = SubResource("Resource_ctatt")
 sun = NodePath("../world lighting/Sun")
 sky = NodePath("../world lighting/WorldEnvironment")
@@ -121,7 +123,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 142.717, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="world lighting"]
 environment = SubResource("Environment_tlwt5")
-script = ExtResource("3_2lf6f")
+script = ExtResource("4_4q8dg")
 
 [node name="Sun" type="DirectionalLight3D" parent="world lighting"]
 transform = Transform3D(1, 0, 0, 0, -0.994522, -0.104528, 0, 0.104528, -0.994522, 1.29396, 5.92958, 8.59867)
@@ -131,7 +133,7 @@ shadow_enabled = true
 shadow_opacity = 0.89
 shadow_blur = 3.871
 directional_shadow_blend_splits = true
-script = ExtResource("1_pm21f")
+script = ExtResource("5_lawxi")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="world lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.39445, 1.1935, 85.5014)
@@ -144,7 +146,7 @@ light_color = Color(1, 0.760784, 0, 1)
 light_energy = 3.366
 shadow_enabled = true
 
-[node name="TERRAIN2" parent="world lighting/CSGBox3D" instance=ExtResource("16_dss4m")]
+[node name="TERRAIN2" parent="world lighting/CSGBox3D" instance=ExtResource("6_uni40")]
 transform = Transform3D(-0.99997, 0, -0.00774915, 0, 1, 0, 0.00774915, 0, -0.99997, -33.7822, -1.68945, -13.4502)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="world lighting/CSGBox3D"]
@@ -152,7 +154,7 @@ visible = false
 shadow_enabled = true
 shadow_normal_bias = 10.0
 
-[node name="player" parent="." instance=ExtResource("6_kpybi")]
+[node name="Player" parent="." instance=ExtResource("7_aqlsr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9533, 143.449, 90.1723)
 
 [node name="platforms" type="Node3D" parent="."]
@@ -196,7 +198,7 @@ transform = Transform3D(0.901812, -0.162663, -0.400345, -0.341021, 0.301113, -0.
 material_override = SubResource("StandardMaterial3D_o8fc1")
 size = Vector3(2.04504, 0.001, 2.65064)
 
-[node name="blockbench_export4" parent="." instance=ExtResource("8_lakw3")]
+[node name="blockbench_export4" parent="." instance=ExtResource("12_agajo")]
 transform = Transform3D(59.7453, 0, -90.6753, 0, 150, 0, 45.3376, 0, 119.491, -255.923, 32.311, 283.607)
 
 [node name="world box" type="Node3D" parent="."]
@@ -238,32 +240,38 @@ material_override = SubResource("StandardMaterial3D_036b0")
 use_collision = true
 size = Vector3(0.408725, 2.62158, 43.9884)
 
-[node name="blockbench_export2" parent="." instance=ExtResource("3_xo05s")]
+[node name="blockbench_export2" parent="." instance=ExtResource("14_e4yt5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6268, 142.312, 90.0851)
 
-[node name="blockbench_export3" parent="." instance=ExtResource("4_dss4m")]
+[node name="blockbench_export3" parent="." instance=ExtResource("15_x70b3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8051, 142.657, 86.839)
 
-[node name="blocks" parent="." instance=ExtResource("8_4mrxx")]
+[node name="blocks" parent="." instance=ExtResource("16_5w2bu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0474, 142.218, 69.1703)
 
-[node name="ghoul" parent="." instance=ExtResource("10_w7kh3")]
+[node name="ghoul" parent="." instance=ExtResource("17_1bdwf")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.82709, 142.222, 67.1093)
 
-[node name="bot" parent="." instance=ExtResource("12_jhx03")]
+[node name="bot" parent="." instance=ExtResource("18_1w2qq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54933, 142.421, 65.3442)
 
-[node name="rv" parent="." instance=ExtResource("11_q5onr")]
+[node name="rv" parent="." instance=ExtResource("19_yd118")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2904, 142.218, 83.6489)
 
-[node name="cabinet2" parent="." instance=ExtResource("12_q5onr")]
+[node name="cabinet2" parent="." instance=ExtResource("20_lffjk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6801, 142.231, 78.5535)
 
-[node name="blockbench_export" parent="." instance=ExtResource("12_o8fc1")]
+[node name="blockbench_export" parent="." instance=ExtResource("21_cgwb4")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 13.7706, 142.218, 65.565)
 
-[node name="TERRAIN3" parent="." instance=ExtResource("17_7t5mc")]
+[node name="TERRAIN3" parent="." instance=ExtResource("22_tx6do")]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
 
-[node name="tomato" parent="." instance=ExtResource("22_ctatt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4686, 143.341, 80.4679)
+[node name="Tomato" parent="." instance=ExtResource("23_jot8m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5531, 143.114, 80.6945)
+
+[node name="Tomato2" parent="." instance=ExtResource("23_jot8m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3029, 143.358, 80.6075)
+
+[node name="Tomato3" parent="." instance=ExtResource("23_jot8m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1098, 143.2, 80.473)

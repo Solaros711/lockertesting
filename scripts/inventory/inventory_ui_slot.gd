@@ -1,13 +1,15 @@
 extends Panel
 
-@onready var item_visual: Sprite2D = $Item_Display
+@onready var item_visual: Sprite2D = $CenterContainer/Panel/Item_Display
+@onready var quantity: Label = $CenterContainer/Panel/Label
 
-func update(item: Item):
-	if !item:
+func update(slot: InventorySlot):
+	if not slot.item:
 		item_visual.visible = false
+		quantity.visible = false
 	else:
+		print(slot.item)
+		item_visual.texture = slot.item.texture
 		item_visual.visible = true
-		item_visual.texture = item.texture
-
-func _ready() -> void:
-	pass # Replace with function body.
+		quantity.text = str(slot.stack)
+		quantity.visible = true

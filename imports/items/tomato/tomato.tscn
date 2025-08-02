@@ -83,27 +83,27 @@ shadow_mesh = SubResource("ArrayMesh_uvf75")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1dhk7"]
 data = PackedVector3Array(0.0078125, 0.046875, -0.0078125, 0.0078125, 0.015625, 0.0078125, 0.0078125, 0.046875, 0.0078125, 0.0078125, 0.046875, -0.0078125, 0.0078125, 0.015625, -0.0078125, 0.0078125, 0.015625, 0.0078125, -0.0078125, 0.015625, 0.0078125, -0.0078125, 0.046875, -0.0078125, -0.0078125, 0.046875, 0.0078125, -0.0078125, 0.015625, 0.0078125, -0.0078125, 0.015625, -0.0078125, -0.0078125, 0.046875, -0.0078125, -0.0078125, 0.046875, 0.0078125, 0.0078125, 0.046875, -0.0078125, 0.0078125, 0.046875, 0.0078125, -0.0078125, 0.046875, 0.0078125, -0.0078125, 0.046875, -0.0078125, 0.0078125, 0.046875, -0.0078125, 0.0078125, 0.015625, -0.0078125, -0.0078125, 0.015625, 0.0078125, 0.0078125, 0.015625, 0.0078125, 0.0078125, 0.015625, -0.0078125, -0.0078125, 0.015625, -0.0078125, -0.0078125, 0.015625, 0.0078125, 0.0078125, 0.015625, 0.0078125, -0.0078125, 0.046875, 0.0078125, 0.0078125, 0.046875, 0.0078125, 0.0078125, 0.015625, 0.0078125, -0.0078125, 0.015625, 0.0078125, -0.0078125, 0.046875, 0.0078125, -0.0078125, 0.046875, -0.0078125, 0.0078125, 0.015625, -0.0078125, 0.0078125, 0.046875, -0.0078125, -0.0078125, 0.046875, -0.0078125, -0.0078125, 0.015625, -0.0078125, 0.0078125, 0.015625, -0.0078125)
 
-[node name="tomato" type="Node3D"]
+[node name="Tomato" type="Node3D"]
 
-[node name="Node" type="Node3D" parent="."]
+[node name="Item" type="Node3D" parent="."]
 
-[node name="sphere" type="MeshInstance3D" parent="Node"]
+[node name="sphere" type="MeshInstance3D" parent="Item"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0625, 0)
 mesh = SubResource("ArrayMesh_7p2qi")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node/sphere"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Item/sphere"]
 script = ExtResource("2_b5sn4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/sphere/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Item/sphere/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_wiad8")
 
-[node name="cuboid" type="MeshInstance3D" parent="Node"]
+[node name="cuboid" type="MeshInstance3D" parent="Item"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0625, 0)
 mesh = SubResource("ArrayMesh_m2esv")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node/cuboid"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Item/cuboid"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/cuboid/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Item/cuboid/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_1dhk7")

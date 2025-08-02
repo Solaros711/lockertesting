@@ -8,6 +8,7 @@ const SUN_ROTATE: float = 0.00003644
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	light_color = DAWN_COLOR
+	rotate_x(0.8)
 	pass # Replace with function body.
 
 #rotates the sun on the x axis, changing the color based on where it is on the horizon
@@ -18,7 +19,6 @@ func do_sun_move(time: DateTime):
 		#Resets angle of the sun so the inaccuracy doesn't break days later in time.
 		if time.hours == 0 && time.minutes <= 0 && time.seconds <= 5:
 			rotation_degrees = Vector3(90, 0, 0)
-			print(str(rotation_degrees)+" degrees")
 	else:
 		light_energy = 1.0
 		if time.hours <= 6 && time.minutes <= 5:

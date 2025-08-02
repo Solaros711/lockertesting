@@ -1,6 +1,6 @@
-extends Item3d
+extends Node3D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	item3d_name = "tomato"
-	item_vis = "Tomato"
+	pass # Replace with function body.

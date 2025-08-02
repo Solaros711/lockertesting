@@ -22,7 +22,7 @@ func _ready():
 
 
 func _input(event: InputEvent):
-	if open_menu == false && open_esc == false:
+	if not open_menu && not open_esc:
 		#Hides the mouse while in FPS mode
 		Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
 		#Handles Camera rotation relative to mouse movement.
@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 			open_esc = !open_esc
 	if Input.is_action_just_pressed("inventory"):
 		open_menu = !open_menu
-	if open_menu != true && open_esc != true:
+	if not open_menu && not open_esc:
 		# Handle jump.
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
@@ -62,7 +62,7 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction && open_menu != true:
+	if direction && not open_menu:
 		if Input.is_action_pressed("sprint"):
 			velocity.x = direction.x * SPEED * SPEED
 			velocity.z = direction.z * SPEED * SPEED
@@ -82,3 +82,6 @@ func _physics_process(delta: float) -> void:
 			velocity.z = move_toward(velocity.z, 0, des_rate)
 
 	move_and_slide()
+	
+func add_item_to_inv(item: String, quantity: int):
+	inventory.AddItem(load("res://scripts/inventory/items/"+item+".tres"), quantity)

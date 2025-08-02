@@ -9,7 +9,7 @@ func _process(delta: float) -> void:
 		if hitObj.has_method("interact") && Input.is_action_just_pressed("interact"):
 			hitObj.interact()
 		if hitObj.has_method("pickup") && Input.is_action_just_pressed("interact"):
-			hitObj.pickup()
+			hitObj.pickup(hitObj.item3d_name)
 		if hitObj.has_method("raycast_see"):
 			vision = hitObj.raycast_see()
 	else:

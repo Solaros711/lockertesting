@@ -1,10 +1,69 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=4 format=3 uid="uid://uhbyiyn5jcq5"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=15 format=3 uid="uid://uhbyiyn5jcq5"]
 
-[ext_resource type="Script" uid="uid://dm1dpuf7u4e7g" path="res://scripts/inventory/item.gd" id="1_kls0t"]
-[ext_resource type="Resource" uid="uid://d0w6jcm72e1rf" path="res://scripts/inventory/items/tomato.tres" id="2_rpwpc"]
+[ext_resource type="Script" uid="uid://cudguqaqhea6e" path="res://inventory_slot.gd" id="2_spl8u"]
 [ext_resource type="Script" uid="uid://jsvfev1cb8dd" path="res://scripts/inventory/inventory.gd" id="3_jap24"]
+
+[sub_resource type="Resource" id="Resource_spl8u"]
+script = ExtResource("2_spl8u")
+stack = 0
+metadata/_custom_type_script = "uid://cudguqaqhea6e"
+
+[sub_resource type="Resource" id="Resource_kls0t"]
+script = ExtResource("2_spl8u")
+stack = 0
+metadata/_custom_type_script = "uid://cudguqaqhea6e"
+
+[sub_resource type="Resource" id="Resource_rpwpc"]
+script = ExtResource("2_spl8u")
+stack = 0
+metadata/_custom_type_script = "uid://cudguqaqhea6e"
+
+[sub_resource type="Resource" id="Resource_jap24"]
+script = ExtResource("2_spl8u")
+stack = 0
+metadata/_custom_type_script = "uid://cudguqaqhea6e"
+
+[sub_resource type="Resource" id="Resource_sefcj"]
+script = ExtResource("2_spl8u")
+stack = 0
+metadata/_custom_type_script = "uid://cudguqaqhea6e"
+
+[sub_resource type="Resource" id="Resource_5rrv2"]
+script = ExtResource("2_spl8u")
+stack = 0
+metadata/_custom_type_script = "uid://cudguqaqhea6e"
+
+[sub_resource type="Resource" id="Resource_tximb"]
+script = ExtResource("2_spl8u")
+stack = 0
+metadata/_custom_type_script = "uid://cudguqaqhea6e"
+
+[sub_resource type="Resource" id="Resource_byde7"]
+script = ExtResource("2_spl8u")
+stack = 0
+metadata/_custom_type_script = "uid://cudguqaqhea6e"
+
+[sub_resource type="Resource" id="Resource_8kjfh"]
+script = ExtResource("2_spl8u")
+stack = 0
+metadata/_custom_type_script = "uid://cudguqaqhea6e"
+
+[sub_resource type="Resource" id="Resource_jsgbl"]
+script = ExtResource("2_spl8u")
+stack = 0
+metadata/_custom_type_script = "uid://cudguqaqhea6e"
+
+[sub_resource type="Resource" id="Resource_s5dfj"]
+script = ExtResource("2_spl8u")
+stack = 0
+metadata/_custom_type_script = "uid://cudguqaqhea6e"
+
+[sub_resource type="Resource" id="Resource_b84js"]
+script = ExtResource("2_spl8u")
+stack = 0
+metadata/_custom_type_script = "uid://cudguqaqhea6e"
 
 [resource]
 script = ExtResource("3_jap24")
-items = Array[ExtResource("1_kls0t")]([ExtResource("2_rpwpc"), null, null, null, null, null, null, null, null, null, null, null])
+inventory_slots = Array[ExtResource("2_spl8u")]([SubResource("Resource_spl8u"), SubResource("Resource_kls0t"), SubResource("Resource_rpwpc"), SubResource("Resource_jap24"), SubResource("Resource_sefcj"), SubResource("Resource_5rrv2"), SubResource("Resource_tximb"), SubResource("Resource_byde7"), SubResource("Resource_8kjfh"), SubResource("Resource_jsgbl"), SubResource("Resource_s5dfj"), SubResource("Resource_b84js")])
 metadata/_custom_type_script = "uid://jsvfev1cb8dd"

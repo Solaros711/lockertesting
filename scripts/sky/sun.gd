@@ -8,7 +8,6 @@ const SUN_ROTATE: float = 0.00003644
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	light_color = DAWN_COLOR
-	rotate_x(0.8)
 	pass # Replace with function body.
 
 #rotates the sun on the x axis, changing the color based on where it is on the horizon

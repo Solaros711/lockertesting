@@ -84,4 +84,4 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func add_item_to_inv(item: String, quantity: int):
-	inventory.AddItem(load("res://scripts/inventory/items/"+item+".tres"), quantity)
+	return inventory.AddItem(load("res://scripts/inventory/items/"+item+".tres"), quantity)

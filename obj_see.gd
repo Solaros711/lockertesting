@@ -13,7 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if ray.vision != "" && in_menu != true:
+	if ray.vision != "" && not in_menu:
 		object_info_text.text = ray.vision
 		open()
 	else:

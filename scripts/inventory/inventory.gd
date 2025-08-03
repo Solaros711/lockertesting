@@ -1,6 +1,7 @@
 class_name Inventory extends Resource
 
 @export var inventory_slots: Array[InventorySlot]
+var is_full: bool = false
 
 signal update
 
@@ -10,21 +11,15 @@ func AddItem(new_item: Item, quantity: int):
 			if inventory_slots[i].item == null:
 				inventory_slots[i].item = new_item
 				inventory_slots[i].stack = quantity
+				is_full = false
 				break
 			else:
 				print("oops all full")
+				is_full = true
+				break
 		else:
 			inventory_slots[i].stack += quantity
+			is_full = false
 			break
-				
-	#var itemslots = inventory_slots.filter(func(slot): return slot.item == new_item)
-	#print(itemslots)
-	#if not itemslots.is_empty():
-	#	itemslots[0].stack += quantity
-	#else:
-		#var emptyslots = itemslots.filter(func(slot): return slot.item == null)
-		#print(emptyslots.is_empty())
-		#if not emptyslots.is_empty():
-			#emptyslots[0].item = new_item
-			#emptyslots[0].stack = quantity
 	update.emit()
+	return is_full

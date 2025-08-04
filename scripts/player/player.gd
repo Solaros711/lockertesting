@@ -83,5 +83,6 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
+#Returns true if item was added, false if it was not added.
 func add_item_to_inv(item: String, quantity: int):
 	return inventory.AddItem(load("res://scripts/inventory/items/"+item+".tres"), quantity)

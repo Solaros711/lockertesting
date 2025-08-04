@@ -13,12 +13,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	#Checks to see if player is in a menu. If not, it will display the tooltip, if not it will be blank.
 	if ray.vision != "" && not in_menu:
 		object_info_text.text = ray.vision
 		open()
 	else:
 		object_info_text.text = ""
 		close()
+	#using the menu keys will flip the state of the in_menu value so the tooltip won't appear in menus.
 	if Input.is_action_just_pressed("escape_menu") || Input.is_action_just_pressed("inventory"):
 		in_menu = !in_menu
 

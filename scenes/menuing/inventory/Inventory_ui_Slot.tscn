@@ -1,7 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqtedcuc6a4e7"]
+[gd_scene load_steps=5 format=3 uid="uid://bqtedcuc6a4e7"]
 
 [ext_resource type="Texture2D" uid="uid://duae8f3hsahmx" path="res://textures/inventory/slot.png" id="1_tcetr"]
 [ext_resource type="Script" uid="uid://vy6qra27deco" path="res://scripts/inventory/inventory_ui_slot.gd" id="1_uxh7v"]
+[ext_resource type="Script" uid="uid://c8a7011tsrdp0" path="res://scenes/menuing/inventory/item_tooltip.gd" id="3_uxh7v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tit7w"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.0313726, 0.109804, 0.0666667, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 9
+shadow_color = Color(0, 0, 0, 0.8)
+shadow_size = 1
+shadow_offset = Vector2(1.5, 1.5)
 
 [node name="Inventory_UI_Slot" type="Panel"]
 custom_minimum_size = Vector2(16, 16)
@@ -34,3 +56,24 @@ offset_right = 9.0
 offset_bottom = 9.0
 scale = Vector2(0.5, 0.5)
 horizontal_alignment = 2
+
+[node name="Item_Tooltip" type="PanelContainer" parent="." node_paths=PackedStringArray("tooltip", "item_panel")]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 17.0
+offset_right = 107.0
+offset_bottom = 62.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tit7w")
+script = ExtResource("3_uxh7v")
+tooltip = NodePath("RichTextLabel")
+item_panel = NodePath("..")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Item_Tooltip"]
+layout_mode = 2
+mouse_filter = 2
+fit_content = true
+autowrap_mode = 0
+
+[connection signal="mouse_entered" from="." to="Item_Tooltip" method="toggle" binds= [true]]
+[connection signal="mouse_exited" from="." to="Item_Tooltip" method="toggle" binds= [false]]

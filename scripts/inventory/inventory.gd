@@ -5,6 +5,8 @@ var is_full: bool = false
 
 signal update
 
+#TODO Add max_stack support for items when itemstack is full.
+
 func AddItem(new_item: Item, quantity: int):
 	#Loops through inventory size
 	for i in inventory_slots.size():
@@ -23,8 +25,11 @@ func AddItem(new_item: Item, quantity: int):
 				break
 		#If it does contain target item, it will incriment it by quantity
 		else:
-			inventory_slots[i].stack += quantity
-			is_full = false
-			break
+			if inventory_slots[i].stack <= inventory_slots[i].item.max_stack:
+				inventory_slots[i].stack += quantity
+				if inventory_slots[i].stack > inventory_slots[i].item.max_stack:
+					inventory_slots[i].stack = inventory_slots[i].item.max_stack
+				is_full = false
+				break
 	update.emit()
 	return is_full

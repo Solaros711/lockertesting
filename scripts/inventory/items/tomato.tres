@@ -8,4 +8,5 @@ script = ExtResource("1_0bdr8")
 item_name = "Tomato"
 texture = ExtResource("2_xvjp5")
 item_info = "Press Q to drop"
+max_stack = 100
 metadata/_custom_type_script = "uid://dm1dpuf7u4e7g"

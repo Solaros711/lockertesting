@@ -14,6 +14,10 @@ config/name="locker"
 run/main_scene="uid://c17fm0aekfsvg"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
+
 [filesystem]
 
 import/vram_compression/cache_gpu_compressor=false

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c23ui4yeato6q"]
+
+[ext_resource type="Script" uid="uid://dm1dpuf7u4e7g" path="res://scripts/inventory/scripts/item.gd" id="1_ipf3i"]
+[ext_resource type="Texture2D" uid="uid://xbhejaot0bjv" path="res://textures/items/cauliflower.png" id="2_oimm8"]
+
+[resource]
+script = ExtResource("1_ipf3i")
+item_name = "Cauliflower"
+texture = ExtResource("2_oimm8")
+item_info = "Press Q to drop"
+max_stack = 100
+metadata/_custom_type_script = "uid://dm1dpuf7u4e7g"

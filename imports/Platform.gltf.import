@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dusvu8jj0adoj"
-path="res://.godot/imported/tomato.gltf-e67e8a56499eb2952dd1894e5d94a821.scn"
+uid="uid://chyharh4tv4m7"
+path="res://.godot/imported/Platform.gltf-56c952f1ee4fafe09d69ccb0dc5a0e48.scn"
 
 [deps]
 
-source_file="res://imports/items/tomato/tomato.gltf"
-dest_files=["res://.godot/imported/tomato.gltf-e67e8a56499eb2952dd1894e5d94a821.scn"]
+source_file="res://imports/Platform.gltf"
+dest_files=["res://.godot/imported/Platform.gltf-56c952f1ee4fafe09d69ccb0dc5a0e48.scn"]
 
 [params]
 

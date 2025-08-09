@@ -3,17 +3,20 @@ extends CharacterBody3D
 const SENSITIVITY = 0.01
 const SPEED = 4.0
 const JUMP_VELOCITY = 4.5
+const DROP_DISTANCE = 2.0
 
-const gravity = 9.81
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-@export var inventory: Inventory
-@export var flashlight: SpotLight3D
 var fl_toggle: bool = false
 var open_menu: bool = false
 var open_esc: bool = false
 
+@export var inventory: Inventory
+@export var flashlight: SpotLight3D
+
 @onready var head = $head
 @onready var camera = $head/Camera3D
+@onready var ray = $head/Camera3D/RayCast3D
 @onready var cursor_pos = camera.get_viewport().get_mouse_position()
 
 func _ready():
@@ -86,3 +89,12 @@ func _physics_process(delta: float) -> void:
 #Returns true if item was added, false if it was not added.
 func add_item_to_inv(item: String, quantity: int):
 	return inventory.AddItem(load("res://scripts/inventory/items/"+item+".tres"), quantity)
+	
+func remove_item_from_inv(target: int, quantity: int):
+	var item_name: String = inventory.RemoveItem(target, quantity)
+	var dropped_item_3d = load("res://imports/items/"+item_name+"/"+item_name+".tscn")
+	var instance = dropped_item_3d.instantiate()
+	var drop_pos = position
+	instance.position = drop_pos
+	get_parent().add_child(instance)
+	

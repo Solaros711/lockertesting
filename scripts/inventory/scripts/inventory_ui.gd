@@ -12,6 +12,7 @@ func _ready():
 func update_slots():
 	for i in range(min(inventory.inventory_slots.size(), slots.size())):
 		slots[i].update(inventory.inventory_slots[i])
+		inventory.inventory_slots[i].slot_number = i
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("inventory"):

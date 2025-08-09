@@ -7,6 +7,7 @@ class_name TimeSystem extends Node
 @export var ticks_per_second: int = 6
 
 #updates DateTime variable
+#HACK See if there is an easier way to optimize this
 func _process(delta: float) -> void:
 	date_time.increase_by_sec(delta * ticks_per_second)
 	sun.do_sun_move(date_time)

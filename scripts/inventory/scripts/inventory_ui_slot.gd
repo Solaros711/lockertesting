@@ -3,7 +3,7 @@ extends Panel
 @onready var item_visual: Sprite2D = $CenterContainer/Panel/Item_Display
 @onready var quantity: Label = $CenterContainer/Panel/Label
 
-var cur_item: Item
+var cur_item: InventorySlot
 
 func update(slot: InventorySlot):
 	if not slot.item:
@@ -11,7 +11,7 @@ func update(slot: InventorySlot):
 		quantity.visible = false
 	else:
 		print(slot.item)
-		cur_item = slot.item
+		cur_item = slot
 		item_visual.texture = slot.item.texture
 		item_visual.visible = true
 		quantity.text = str(slot.stack)

@@ -20,7 +20,6 @@ func _process(delta: float) -> void:
 	#Checks to see if player is in a menu. If not, it will display the tooltip, if not it will be blank.
 	if ray.vision != "" and not in_menu:
 		object_info_text.text = ray.vision
-		print(object_info_text.text)
 		open()
 	else:
 		object_info_text.text = ""

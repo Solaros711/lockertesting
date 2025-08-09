@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://3a7y3cmagou7" path="res://imports/items/tomato/tomato_0.png" id="1_b5sn4"]
 [ext_resource type="Script" uid="uid://bqy2p7w3pyi7o" path="res://imports/items/tomato/tomato3ditem.gd" id="2_uysal"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b5sn4"]
+points = PackedVector3Array(-0.0625, -0.0312561, -0.0258908, -0.0625, -0.0312561, 0.0258785, -0.0441954, 0.0129301, -0.0183169, -0.0258908, -0.0312561, -0.0625, -0.0441954, -0.0754561, -0.0183169, -0.0258908, -0.0312561, 0.0625, -0.0183169, 0.0129301, 0.0441831, -0.0441954, 0.0129301, 0.0182924, -0.0441954, -0.0754561, 0.0182924, -0.0183169, -0.0754561, 0.0441831, -0.00781862, 0.046875, -0.00781862, -0.0183169, 0.0129301, -0.0441954, 0.0258785, -0.0312561, -0.0625, -0.0183169, -0.0754561, -0.0441954, -1.22339e-05, -0.09375, -1.22339e-05, 0.0258785, -0.0312561, 0.0625, 0.0182924, 0.0129301, 0.0441831, -0.00781862, 0.046875, 0.00780638, 0.0182924, -0.0754561, 0.0441831, 0.00780638, 0.046875, -0.00781862, 0.0182924, 0.0129301, -0.0441954, 0.0441831, 0.0129301, -0.0183169, 0.0625, -0.0312561, -0.0258908, 0.0441831, -0.0754561, -0.0183169, 0.0182924, -0.0754561, -0.0441954, 0.0441831, -0.0754561, 0.0182924, 0.0625, -0.0312561, 0.0258785, 0.0441831, 0.0129301, 0.0182924, 0.00780638, 0.046875, 0.00780638)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctwyg"]
 resource_name = "material_0"
 transparency = 2
@@ -45,20 +48,18 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bd6u4")
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_orkbe"]
-radius = 0.07
-
 [node name="Tomato" type="Node3D"]
 
 [node name="Item" type="Node3D" parent="."]
 
-[node name="cuboid" type="MeshInstance3D" parent="Item"]
-mesh = SubResource("ArrayMesh_7p2qi")
-skeleton = NodePath("")
-
-[node name="RigidBody3D" type="RigidBody3D" parent="Item/cuboid"]
+[node name="RigidBody3D" type="RigidBody3D" parent="Item"]
+collision_layer = 4
+collision_mask = 7
 script = ExtResource("2_uysal")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Item/cuboid/RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.021193, 0)
-shape = SubResource("SphereShape3D_orkbe")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Item/RigidBody3D"]
+shape = SubResource("ConvexPolygonShape3D_b5sn4")
+
+[node name="cuboid" type="MeshInstance3D" parent="Item/RigidBody3D/CollisionShape3D"]
+mesh = SubResource("ArrayMesh_7p2qi")
+skeleton = NodePath("")

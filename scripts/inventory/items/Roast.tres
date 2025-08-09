@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c1hpxun3r3drb"]
+
+[ext_resource type="Script" uid="uid://dm1dpuf7u4e7g" path="res://scripts/inventory/scripts/item.gd" id="1_7hui2"]
+[ext_resource type="Texture2D" uid="uid://d0rnfo8b8bpmb" path="res://textures/items/roast.png" id="2_y3xeh"]
+
+[resource]
+script = ExtResource("1_7hui2")
+item_name = "Roast"
+texture = ExtResource("2_y3xeh")
+item_info = "Press Q to drop"
+max_stack = 100
+metadata/_custom_type_script = "uid://dm1dpuf7u4e7g"

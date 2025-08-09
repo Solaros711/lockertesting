@@ -2,7 +2,7 @@ extends RayCast3D
 
 var vision: String = ""
 
-#TODO Try to optimize this so it won't eat up so much processing time.
+#FIXME Try to optimize this so it won't eat up so much processing time.
 func _process(delta: float) -> void:
 	if is_colliding():
 		var hit_object = get_collider()
@@ -15,3 +15,5 @@ func _process(delta: float) -> void:
 			vision = hit_object.raycast_see()
 		else:
 			vision = ""
+	else:
+		vision = ""

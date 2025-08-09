@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://l3xsvn65abpd"]
 
-[ext_resource type="Script" uid="uid://fqgluy2uwccp" path="res://scripts/inventory/obj_see.gd" id="1_yc6mg"]
+[ext_resource type="Script" uid="uid://fqgluy2uwccp" path="res://scripts/inventory/scripts/obj_see.gd" id="1_yc6mg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yc6mg"]
 

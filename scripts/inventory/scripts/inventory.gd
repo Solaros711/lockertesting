@@ -1,6 +1,7 @@
 class_name Inventory extends Resource
 
 #TODO Make inventory system modular, so when the player adds a backpack to their inventory, they can add more slots to it.
+#TODO Add equipment slots
 @export var inventory_slots: Array[InventorySlot]
 var is_full: int = 0
 
@@ -11,7 +12,7 @@ signal update
 func AddItem(new_item: Item, quantity: int):
 	#Loops through inventory size
 	#Checks to see if there are any existing slots that contain the target item
-	var item_slots = inventory_slots.filter(func(slot): return slot.item == new_item)
+	var item_slots = inventory_slots.filter(func(slot): return slot.item == new_item and slot.stack < slot.item.max_stack)
 	if not item_slots.is_empty():
 		item_slots[0].stack += quantity
 		is_full = 0
@@ -19,7 +20,7 @@ func AddItem(new_item: Item, quantity: int):
 			is_full = AddItem(new_item, (item_slots[0].stack-item_slots[0].item.max_stack))
 	else:
 		#Checks for an empty slots to put target item in. If there are none, is_full is set to quantity
-		var emptyslots = inventory_slots.filter(func(slot): print(slot); return slot.item == null)
+		var emptyslots = inventory_slots.filter(func(slot): return slot.item == null)
 		if not emptyslots.is_empty():
 			emptyslots[0].item = new_item
 			emptyslots[0].stack = quantity

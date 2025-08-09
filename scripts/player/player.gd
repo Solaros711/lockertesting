@@ -90,6 +90,7 @@ func _physics_process(delta: float) -> void:
 func add_item_to_inv(item: String, quantity: int):
 	return inventory.AddItem(load("res://scripts/inventory/items/"+item+".tres"), quantity)
 	
+#TODO Make items appear where camera is facing
 func remove_item_from_inv(target: int, quantity: int):
 	var item_name: String = inventory.RemoveItem(target, quantity)
 	var dropped_item_3d = load("res://imports/items/"+item_name+"/"+item_name+".tscn")

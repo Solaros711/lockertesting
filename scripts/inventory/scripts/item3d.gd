@@ -12,7 +12,6 @@ func pickup(item_name: String):
 	var check_if_full: int = get_node("/root/World/Player").add_item_to_inv(item_name, quantity)
 	if check_if_full != 0:
 		return false
-		print(check_if_full)
 	else:
 		find_parent("Item").get_parent().queue_free()
 		return true

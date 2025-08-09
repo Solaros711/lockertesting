@@ -10,7 +10,6 @@ func update(slot: InventorySlot):
 		item_visual.visible = false
 		quantity.visible = false
 	else:
-		print(slot.item)
 		cur_item = slot
 		item_visual.texture = slot.item.texture
 		item_visual.visible = true
